@@ -1,0 +1,14 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+
+# raw data (fictional) stays out: repo = code + results; fetch with data/fetch.sh
+data/raw/*
+!data/raw/.gitkeep
+
+# build scratch
+deck/_*.html
+out/test.pdf
