@@ -1,0 +1,70 @@
+{#- Demo deck: one slide per layout, fixture data only (build.py --demo). -#}
+{% import 'slides.j2' as s %}
+
+{{ s.cover(
+  kicker='Northpine · Series A',
+  headline='AI agent runs growth for Shopify brands — ' ~ m.demo_arr ~ ' ARR, ' ~ m.demo_growth ~ ' since April',
+  sub='Fixture deck: tests every layout macro, not real data',
+  tiles=[
+    {'value': m.demo_arr, 'label': 'ARR, normalized, post-discount', 'accent': true},
+    {'value': m.demo_growth, 'label': 'MRR growth since April'},
+    {'value': m.demo_paying, 'label': 'Paying customers'},
+  ],
+  source='fixture metrics.csv; cut-off date of the fixture') }}
+
+{{ s.chart_slide(
+  headline='Growth bent upward when pricing and Autopilot shipped together, and agencies became the third revenue layer',
+  sub='Normalized MRR by segment, invoice-built, post-discount',
+  chart=chart('demo_mrr_stacked'),
+  callouts=[
+    {'value': m.demo_mrr, 'label': 'MRR in the last month, post-discount', 'accent': true},
+    {'value': m.demo_growth, 'label': 'growth since April, total'},
+    {'value': m.demo_share, 'label': 'of paying customers run Autopilot'},
+  ],
+  source='fixture series demo_mrr.csv',
+  note='Accounting attribution, not causal effect. Pricing change and Autopilot launch overlap.') }}
+
+{{ s.two_chart_slide(
+  headline='Margin back to ' ~ m.demo_gm ~ ' after the summer inference spike (' ~ m.pct_pts('demo_gm_delta') ~ ')',
+  left=chart('demo_gm_line', size='half'), left_title='Gross margin by month',
+  right=chart('demo_spend_bars', size='half'), right_title='Managed ad spend by month',
+  source='fixture series demo_gm.csv, demo_spend.csv') }}
+
+{{ s.table_slide(
+  headline='Customers stay and expand: ' ~ m.demo_nps ~ ' NPS, cohorts above 100% net retention',
+  columns=['Cohort (first paid)', 'Customers', 'GRR 3m', 'GRR 12m', 'NRR 12m', 'Logo churn 12m'],
+  rows=table_rows('demo_cohorts', [('cohort', 'text'), ('n', 'count'), ('grr_3m', 'ratio'), ('grr_12m', 'ratio'), ('nrr_12m', 'ratio'), ('logo_churn_12m', 'ratio')]),
+  total_last=true,
+  callouts=[{'value': m.demo_nps, 'label': 'NPS, latest quarter', 'accent': true}, {'value': m.demo_paying, 'label': 'paying customers'}],
+  source='fixture series demo_cohorts.csv',
+  note='Post-May cohorts are young: 3-month values only.') }}
+
+{{ s.matrix_slide(
+  headline='Rally AI does media buying; we close the whole growth loop',
+  points=series_rows('demo_matrix'),
+  x_label='Scope of the growth loop', x_low='One channel', x_high='Ads + SEO + lifecycle',
+  y_label='Autonomy', y_low='Suggests', y_high='Runs end-to-end',
+  quadrants={'tl': 'Autonomous point tools', 'tr': 'Growth agent', 'bl': 'Dashboards', 'br': 'Suites, human-run'},
+  source='company websites and press; positions are a qualitative judgment') }}
+
+{{ s.columns_slide(
+  headline='One agent, three jobs; Autopilot runs them end-to-end',
+  items=[
+    {'title': 'Paid ads', 'text': 'Launches, tests and reallocates Meta and Google budgets every day.'},
+    {'title': 'SEO', 'text': 'Writes and ships product and collection pages that rank.'},
+    {'title': 'Lifecycle', 'text': 'Builds email and SMS flows from the store catalog and orders.'},
+  ],
+  band={'value': m.demo_share, 'text': 'of paying customers let Autopilot act without approval'},
+  source='product; fixture metrics.csv') }}
+
+{{ s.chart_slide(
+  headline='Full-width chart variant without callouts',
+  chart=chart('demo_mrr_stacked', size='full'),
+  source='fixture series demo_mrr.csv', appendix='A1') }}
+
+{% call s.appendix_slide('A2', 'Cohort table: gross and net revenue retention by first paid quarter', source='fixture series demo_cohorts.csv', note='Runway ' ~ m.demo_runway ~ ' months at ' ~ m.demo_burn ~ ' monthly net burn (fixture).') %}
+{{ s.table_body(
+  ['Cohort', 'Customers', 'GRR 3m', 'GRR 12m', 'NRR 12m', 'Logo churn 12m'],
+  table_rows('demo_cohorts', [('cohort', 'text'), ('n', 'count'), ('grr_3m', 'ratio'), ('grr_12m', 'ratio'), ('nrr_12m', 'ratio'), ('logo_churn_12m', 'ratio')]),
+  total_last=true) }}
+{% endcall %}

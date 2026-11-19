@@ -76,6 +76,28 @@ def run() -> pd.DataFrame:
         for suffix, v in [("lo", lo), ("hi", hi)]:
             rows.append(_row(f"in_price_{key}_{suffix}", 2, f"{name} price ({suffix})", v, "usd_per_month", "as listed", f"Price as listed in Alex's competitor list: '{comp.loc[name, 'pricing']}'",
                              "competitors.csv", f"company={name}", "parsed from pricing text", "Founder-provided, not verified."))
+    # price ladder (slide 2) and positioning matrix (slide 10) series
+    arpa = pd.read_csv(SERIES / "revenue_mrr_monthly.csv").set_index("month").loc[str(OCT26)]
+    arpa_xbl = arpa["mrr_ex_brightline"] / (arpa["paying_customers"] - 1)
+    ladder = [("In-house growth hire", *_price_range(comp.loc["In-house hire", "pricing"]), "ink"),
+              ("Growth agency (Growlane)", *_price_range(comp.loc["Growlane", "pricing"]), "ink"),
+              ("Rally AI (ads only)", *_price_range(comp.loc["Rally AI", "pricing"]), "ink"),
+              ("Northpine, average customer", arpa_xbl, arpa_xbl, "accent")]
+    pd.DataFrame(ladder, columns=["option", "low", "high", "color"]).to_csv(SERIES / "derived_price_ladder.csv", index=False)
+    # Qualitative positions (0–100): x = scope of the growth loop (one job → ads+SEO+email),
+    # y = autonomy (human runs it → agent runs it). Judgment from competitors.csv descriptions.
+    mx = [
+        ("Northpine", 88, 82, True, "bottom", "ads + SEO + email, Autopilot"),
+        ("Rally AI", 38, 78, False, "right", "AI media buyer, Meta + Google"),
+        ("Funnelbird", 14, 64, False, "right", "SEO autopilot only"),
+        ("Adsmith", 14, 26, False, "right", "ad creatives only"),
+        ("Shopify Magic", 44, 12, False, "right", "built-in AI helpers"),
+        ("Agencies, in-house hires", 84, 26, False, "top", "full scope, human-run"),
+    ]
+    pd.DataFrame(mx, columns=["label", "x", "y", "accent", "pos", "sub"]).to_csv(SERIES / "derived_matrix.csv", index=False)
+
+    _appendix_series()
+
     rally_raise = float(re.search(r"\$(\d+)M", comp.loc["Rally AI", "what they do"]).group(1)) * 1e6
     rows.append(_row("in_rally_raise", 10, "Rally AI Series A size", rally_raise, "usd", "2026", "Stated in competitor list", "competitors.csv", "Rally AI", "parsed", "Founder-provided, not verified."))
     notes = (RAW / "founder_notes.md").read_text()
@@ -86,7 +108,11 @@ def run() -> pd.DataFrame:
     # forward-looking arithmetic, explicitly labelled
     d = t.loc[OCT26, "mrr_post"] - t.loc[APR26, "mrr_post"]
     pace = d / 6
+    oct25 = pd.Period("2025-10", "M")
+    pre = (t.loc[APR26, "mrr_post"] - t.loc[oct25, "mrr_post"]) / 6
     rows += [
+        _row("der_net_new_mrr_pre", 4, "Average net new MRR per month, Nov 2025–Apr 2026", pre, "usd_per_month", "2025-11..2026-04", "(mrr_post Apr26 − Oct25)/6", "stripe_invoices.csv", "", "Δ/6", ""),
+        _row("der_net_new_mrr_accel", 4, "Net new MRR per month, May–Oct vs Nov–Apr", pace / pre, "x", "", "pace / pre", "stripe_invoices.csv", "", "", ""),
         _row("der_net_new_mrr_pace", 12, "Average net new MRR per month, May–Oct 2026", pace, "usd_per_month", "2026-05..2026-10", "(mrr_post Oct − Apr)/6", "stripe_invoices.csv", "", "Δ/6", ""),
         _row("der_arr_12m_at_pace", 12, "ARR in 12 months if May–Oct net-new pace holds (linear)", (t.loc[OCT26, "mrr_post"] + 12 * pace) * 12, "usd", "2027-10", "(mrr_post Oct26 + 12 × avg monthly net new MRR) × 12",
              "stripe_invoices.csv", "", "(mrr+12×pace)×12", "EXTRAPOLATION, not a forecast: assumes flat net-new pace, no acceleration from the raise."),
@@ -102,4 +128,71 @@ def run() -> pd.DataFrame:
              "stripe_prices.csv; stripe_invoices.csv", "", "Σ n×Δprice", "Scenario arithmetic at list prices; assumes zero churn from migration."),
         _row("der_legacy_scale_n", 12, "Legacy Scale customers (same price as Scale + Autopilot)", float(mix.loc["Scale (legacy)", "paying"]), "count", "2026-10", "Paying on Scale (legacy)", "stripe_invoices.csv", "", "count", "Legacy Scale $2,499 vs Scale + Autopilot $2,490: Autopilot at no extra price."),
     ]
+    rows += _agent_work_rows()
     return pd.DataFrame(rows, columns=COLS)
+
+
+def _appendix_series():
+    """Presentation-ready slices of domain series for appendix tables (no new numbers)."""
+    b = pd.read_csv(SERIES / "revenue_arr_bridge.csv").set_index("step")["value_usd"]
+    labels = [
+        ("kpi_arr_oct26", "KPI-sheet ARR (Oct 2026 'MRR' × 12)"),
+        ("kpi_vs_stripe_cash", "KPI rounding vs Stripe cash collected"),
+        ("less_annual_prepay_11_12", "Less annual prepay collected in Oct (11/12 not yet earned)"),
+        ("add_annual_prepaid_earlier_1_12", "Add 1/12 of annual plans prepaid in earlier months"),
+        ("less_usage", "Less usage-tier fees (reported separately)"),
+        ("less_one_time_fees", "Less one-time onboarding and agency setup fees"),
+        ("add_back_discounts_in_cash", "Add back discounts already netted in cash"),
+        ("less_discounts_recurring", "Less discounts on recurring plans"),
+        ("timing_paid_vs_service_month", "Timing: paid month vs service month"),
+        ("less_refund_dispute_clawbacks", "Refunds and lost disputes in Oct"),
+        ("residual", "Unexplained residual"),
+        ("arr_post_oct26", "ARR, normalized, post-discount"),
+    ]
+    pd.DataFrame([(lab, round(b[k], 2)) for k, lab in labels], columns=["step", "usd"]).to_csv(SERIES / "derived_a1_bridge.csv", index=False)
+
+    c = pd.read_csv(SERIES / "retention_cohorts.csv")
+    c = c[c["grain"] == "quarter"].copy()
+    for k in ["3", "6", "12"]:
+        for col in [f"logo_m{k}", f"nrr_m{k}", f"grr_m{k}"]:
+            c.loc[~c[f"m{k}_complete"].astype(bool), col] = None
+    c["label"] = c["cohort"] + c["left_censored"].map({True: " *", False: ""})
+    c[["label", "n", "start_mrr_post", "logo_m3", "nrr_m3", "logo_m6", "nrr_m6", "logo_m12", "grr_m12", "nrr_m12"]].to_csv(SERIES / "derived_a2_cohorts.csv", index=False)
+
+    a = pd.read_csv(SERIES / "channels_attribution_monthly.csv")
+    a = a[a["month"] >= "2026-06"]
+    g = a.groupby("platform")[["platform_reported_trials", "internal_trials", "platform_spend"]].sum().reset_index()
+    g["ratio"] = g["platform_reported_trials"] / g["internal_trials"]
+    g["platform"] = g["platform"].str.capitalize()
+    g.to_csv(SERIES / "derived_a3_attribution.csv", index=False)
+
+    s = pd.read_csv(SERIES / "retention_support_quarterly.csv")
+    s["label"] = s["quarter"] + s["partial"].map({True: " (Oct)", False: ""})
+    s[["label", "tickets", "avg_paying", "tickets_per_paying", "share_agent_related", "median_first_response_h", "csat_mean"]].to_csv(SERIES / "derived_a4_support.csv", index=False)
+
+    o = pd.read_csv(SERIES / "burn_opex_breakdown.csv")
+    o = o[o["window"] == "last_3m"]
+    names = {"payroll": "Payroll", "cogs": "Cost of revenue", "marketing": "Marketing", "ga": "G&A"}
+    rows = []
+    for bucket in ["payroll", "cogs", "marketing", "ga"]:
+        sub = o[o["bucket"] == bucket].sort_values("per_month_usd", ascending=False)
+        top = ", ".join(sub["line"].head(3).str.replace(r" \(20% of first-year MRR\)", "", regex=True))
+        rows.append((names[bucket], top, sub["per_month_usd"].sum(), sub["share_of_out"].sum()))
+    rows.append(("Total cash out", "", o["per_month_usd"].sum(), o["share_of_out"].sum()))
+    pd.DataFrame(rows, columns=["bucket", "largest_lines", "per_month", "share"]).to_csv(SERIES / "derived_a5_opex.csv", index=False)
+
+
+def _agent_work_rows():
+    from load import customer_month_mrr
+    u = load("product_usage_monthly")
+    cm = customer_month_mrr()
+    paying = set(cm[(cm["month"] == OCT26) & (cm["mrr_post"] > 0)]["customer"])
+    o = u[(u["period"] == OCT26) & u["stripe_customer_id"].isin(paying)]
+    out = []
+    for col, name, slide in [("ad_variations_launched", "Ad variations launched by the agent", 3),
+                             ("articles_published", "SEO articles published by the agent", 3),
+                             ("emails_sent_by_agent", "Emails sent by the agent", 3),
+                             ("agent_actions", "Agent actions", 3)]:
+        out.append(_row(f"der_oct_{col}", slide, f"{name}, Oct 2026 (paying customers)", float(o[col].sum()), "count", "2026-10",
+                        f"Sum of {col} over paying customers in Oct 2026", "product_usage_monthly.csv", "month=2026-10, mrr_post>0", f"sum({col})", ""))
+    return out

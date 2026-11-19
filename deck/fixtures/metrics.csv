@@ -1,0 +1,14 @@
+id,slide,metric,value,unit,period,definition,source_file,filter,formula,caveat
+demo_arr,1,ARR (fixture),4321987.6,usd,2026-10-31,FAKE fixture value,fixture,,,fixture only
+demo_growth,1,Growth (fixture),2.4612,x,Apr-Oct 2026,FAKE fixture value,fixture,,,fixture only
+demo_paying,1,Paying customers (fixture),1234,count,2026-10-31,FAKE fixture value,fixture,,,fixture only
+demo_arpa,2,ARPA (fixture),1490.4,usd_per_month,2026-10,FAKE fixture value,fixture,,,fixture only
+demo_mrr,4,MRR (fixture),360165.6,usd,2026-10,FAKE fixture value,fixture,,,fixture only
+demo_share,3,Share (fixture),0.6371,ratio,2026-10,FAKE fixture value,fixture,,,fixture only
+demo_gm,7,GM (fixture),0.8249,ratio,2026-10,FAKE fixture value,fixture,,,fixture only
+demo_gm_delta,7,GM change (fixture),0.1312,ratio,Jul-Oct 2026,FAKE fixture value,fixture,,,fixture only
+demo_runway,12,Runway (fixture),8.6,months,2026-10-31,FAKE fixture value,fixture,,,fixture only
+demo_nps,6,NPS (fixture),47,score,26Q4,FAKE fixture value,fixture,,,fixture only
+demo_spend,5,Managed spend (fixture),6543210,usd,2026-10,FAKE fixture value,fixture,,,fixture only
+demo_burn,12,Net burn (fixture),-212345,usd_per_month,Aug-Oct 2026,FAKE fixture value,fixture,,,fixture only
+demo_na,12,Uncomputable (fixture),NA,usd,,FAKE,fixture,,,input not set: tests the NA guard

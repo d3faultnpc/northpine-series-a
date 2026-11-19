@@ -1,0 +1,13 @@
+step,usd
+KPI-sheet ARR (Oct 2026 'MRR' × 12),6036000.0
+KPI rounding vs Stripe cash collected,1956.0
+Less annual prepay collected in Oct (11/12 not yet earned),-875600.0
+Add 1/12 of annual plans prepaid in earlier months,238800.0
+Less usage-tier fees (reported separately),-757524.0
+Less one-time onboarding and agency setup fees,-234000.0
+Add back discounts already netted in cash,207960.0
+Less discounts on recurring plans,-182169.6
+Timing: paid month vs service month,0.0
+Refunds and lost disputes in Oct,0.0
+Unexplained residual,0.0
+"ARR, normalized, post-discount",4435422.4

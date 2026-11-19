@@ -1,0 +1,195 @@
+{#- Northpine Series A deck. Every number is {{ m.<id> }} from calc/metrics.csv; charts read calc/series only. -#}
+{% import 'slides.j2' as s %}
+{% set SRC_REV = 'Stripe invoices and subscriptions, Jan 2025 – Oct 2026; MRR = subscription revenue after discounts, excl. one-time and usage fees' %}
+
+{{ s.cover(
+  kicker='Northpine · Series A',
+  headline="Northpine's AI agent runs growth for Shopify brands: " ~ m.rev_arr_post_oct26 ~ ' ARR, up ' ~ m.rev_growth_apr_oct ~ ' since Autopilot launched in May',
+  sub='Raising ' ~ m.fmt('in_raise', decimals=0) ~ ' to turn the agent into the default growth team for independent brands',
+  tiles=[
+    {'value': m.rev_arr_post_oct26, 'label': 'ARR, Oct 2026 (MRR × 12, after discounts)', 'accent': true},
+    {'value': m.rev_growth_apr_oct, 'label': 'MRR growth, Apr → Oct 2026'},
+    {'value': m.rev_paying_customers_oct26, 'label': 'paying customers (Brightline agency = 1)'},
+  ],
+  source=SRC_REV ~ '. Usage-tier fees (' ~ m.der_usage_arr ~ ' run-rate) reported separately.') }}
+
+{{ s.chart_slide(
+  headline='A growth hire costs a Shopify brand ' ~ m.fmt('in_price_hire_lo', unit='usd_k') ~ '–' ~ m.fmt('in_price_hire_hi', unit='usd_k') ~ ' a month; Northpine does the work for ' ~ m.rev_arpa_ex_bl_oct26 ~ ' a month',
+  sub='Brands need someone to run ads, SEO and email every day; most cannot afford a team',
+  chart=chart('price_ladder'),
+  callouts=[
+    {'value': m.rev_arpa_ex_bl_oct26, 'label': 'average monthly bill, Oct 2026 (excl. Brightline)', 'accent': true},
+    {'value': m.fmt('in_price_hire_lo', unit='usd_k') ~ '+', 'label': 'monthly cost of the cheapest alternative that does all three jobs: a hire'},
+  ],
+  source="Alex's competitor list (hire, agency and Rally AI prices as listed); Northpine = Oct 2026 MRR ÷ paying customers, excl. Brightline") }}
+
+{{ s.columns_slide(
+  headline='One agent runs ads, SEO and email; ' ~ m.ret_ap_adoption_oct26 ~ ' of customers let Autopilot run it end to end',
+  items=[
+    {'title': 'Paid ads', 'value': m.der_oct_ad_variations_launched, 'text': 'ad variations launched on Meta and Google in October, with budgets moved to what converts'},
+    {'title': 'SEO content', 'value': m.der_oct_articles_published, 'text': 'articles written and published on customer stores in October'},
+    {'title': 'Lifecycle email', 'value': m.der_oct_emails_sent_by_agent, 'text': 'emails sent by the agent in October, from flows it built on store data'},
+  ],
+  band={'value': m.ret_ap_adoption_oct26, 'text': 'of paying customers run Autopilot: the agent acts without asking. They undo ' ~ m.fmt('ret_beh_on_undo_rate_oct26', decimals=1) ~ ' of its actions, versus ' ~ m.fmt('ret_beh_off_xbl_undo_rate_oct26', decimals=1) ~ ' for manual users'},
+  source='Product usage, Oct 2026, paying customers. Autopilot = autopilot_enabled flag. Undo rate = actions undone ÷ agent actions; manual users excl. Brightline') }}
+
+{{ s.chart_slide(
+  headline='Autopilot was the inflection: net new MRR went from ' ~ m.fmt('der_net_new_mrr_pre', unit='usd_k') ~ ' to ' ~ m.fmt('der_net_new_mrr_pace', unit='usd_k') ~ ' a month, and Autopilot plans brought ' ~ m.rev_drvg_autopilot_share ~ ' of it',
+  chart=chart('mrr_by_plan'),
+  callouts=[
+    {'value': m.der_net_new_mrr_accel, 'label': 'net new MRR per month, May–Oct vs the six months before', 'accent': true},
+    {'value': m.rev_pv_volume_share, 'label': 'of the growth since April is more customers, not higher prices'},
+    {'value': m.rev_growth_apr_oct_ex_bl, 'label': 'growth since April excluding our largest customer'},
+  ],
+  source=SRC_REV,
+  note='Autopilot and new pricing launched together in May 2026, so their effects overlap. Shares are accounting attribution, not causal effect.') }}
+
+{{ s.chart_slide(
+  headline='Brands now trust the agent with ' ~ m.ret_managed_spend_oct26 ~ ' of ad spend a month, ' ~ m.ret_managed_spend_growth_apr_oct26 ~ ' what they gave it in April',
+  chart=chart('managed_spend'),
+  callouts=[
+    {'value': m.ret_managed_spend_annualized_oct26, 'label': 'annualized ad spend under management', 'accent': true},
+    {'value': m.ret_take_rate_oct26, 'label': 'our subscription revenue as a share of that spend'},
+  ],
+  source='Product usage: managed_ad_spend_usd summed over all customers, Jan 2025 – Oct 2026',
+  note='Ad spend is the customers’ money, not our revenue. Brightline brands are ' ~ m.ret_managed_spend_brightline_share_oct26 ~ ' of Oct spend.') }}
+
+{{ s.two_chart_slide(
+  headline='Customers stay longer since Autopilot: monthly logo churn fell from ' ~ m.fmt('ret_logo_churn_avg_pre', decimals=1) ~ ' to ' ~ m.fmt('ret_logo_churn_avg_post', decimals=1) ~ ', and NPS rose to ' ~ m.ret_nps_2026q4,
+  left=chart('logo_churn', size='half'), left_title='Monthly logo churn',
+  right=chart('nps_quarterly', size='half'), right_title='Net Promoter Score',
+  source='Stripe (paying = MRR > 0), NPS survey responses. Churn averages: Nov 2025–Apr 2026 vs May–Oct 2026',
+  note='Since May, Autopilot customers keep ' ~ m.ret_ap_all_xbl_on_nrr5 ~ ' of revenue after five months vs ' ~ m.ret_ap_all_xbl_off_nrr5 ~ ' for the rest (excl. Brightline; self-selected groups). * Q4 = October only.') }}
+
+{{ s.chart_slide(
+  headline='Gross margin is back to ' ~ m.der_gm_oct26 ~ ' after inference costs pushed it to ' ~ m.der_gm_min ~ ' in ' ~ m.der_gm_min_month,
+  chart=chart('gross_margin'),
+  callouts=[
+    {'value': m.gm_inference_per_1k_actions_oct26, 'label': 'inference cost per 1,000 agent actions in Oct, down from ' ~ m.gm_inference_per_1k_actions_peak ~ ' in June', 'accent': true},
+    {'value': m.fmt('gm_openai_drop_jul_aug', unit='ratio'), 'label': 'OpenAI spend, Aug vs Jul, after adding a second inference vendor'},
+  ],
+  source='Bank transactions (COGS = LLM inference + hosting + support tools) ÷ subscription and usage revenue from Stripe',
+  note='Counting half of customer-success payroll as cost of revenue, Oct margin is ' ~ m.gm_incl_cs_oct26 ~ '.') }}
+
+{{ s.table_slide(
+  headline='The Shopify App Store brings customers at ' ~ m.ch_cac_app_store ~ ' each; Meta brings the most, at ' ~ m.ch_cac_meta,
+  columns=['Channel (Stripe tag)', 'New paying, May–Oct', 'Spend, May–Oct', 'CAC', 'Payback, months'],
+  rows=[
+    {'cells': ['Shopify App Store', m.ch_new_paying_app_store, m.fmt('ch_spend_app_store', unit='usd_k'), m.ch_cac_app_store, m.fmt('der_payback_app_store', decimals=1)], 'hl': true},
+    ['Google ads', m.ch_new_paying_google, m.fmt('ch_spend_google', unit='usd_k'), m.ch_cac_google, m.fmt('der_payback_google', decimals=1)],
+    ['Partners', m.ch_new_paying_partners, m.fmt('ch_spend_partners', unit='usd_k'), m.ch_cac_partners, m.fmt('der_payback_partners', decimals=1)],
+    ['Meta ads', m.ch_new_paying_meta, m.fmt('ch_spend_meta', unit='usd_k'), m.ch_cac_meta, m.fmt('der_payback_meta', decimals=1)],
+    ['Content / SEO', m.ch_new_paying_content, m.fmt('ch_spend_content', unit='usd_k'), m.ch_cac_content, m.fmt('der_payback_content', decimals=1)],
+    ['Outbound', m.ch_new_paying_outbound, m.fmt('ch_spend_outbound', unit='usd_k'), m.ch_cac_outbound, m.fmt('der_payback_outbound', decimals=1)],
+    ['All channels', m.ch_new_paying_blended, m.fmt('ch_spend_marketing_total', unit='usd_k'), m.ch_cac_blended, m.fmt('der_payback_blended', decimals=1)],
+  ],
+  align='lrrrr', total_last=true,
+  callouts=[
+    {'value': m.ch_meta_trials_platform_vs_internal, 'label': 'Meta-reported trials vs our own count since June: we never use platform attribution', 'accent': true},
+  ],
+  source='Bank marketing spend (partner commissions to Partners) ÷ new paying customers by Stripe channel tag; payback = CAC ÷ (new-customer MRR × subscription gross margin)',
+  note='Small samples per channel; same-window spend and conversions. Fully loaded with sales payroll, payback is ' ~ m.fmt('der_payback_blended_fully_loaded', decimals=1) ~ ' months.') }}
+
+{{ s.chart_slide(
+  headline='Agencies are a channel and our biggest concentration: Brightline runs ' ~ m.rev_brightline_sub_brands_oct26 ~ ' brands and ' ~ m.rev_top1_share ~ ' of MRR',
+  chart=chart('brightline_share'),
+  callouts=[
+    {'value': m.rev_top1_share, 'label': 'of MRR from Brightline, our largest customer', 'accent': true},
+    {'value': m.rev_top10_share, 'label': 'of MRR from the ten largest customers'},
+    {'value': m.rev_growth_apr_oct_ex_bl, 'label': 'growth since April without Brightline'},
+  ],
+  source=SRC_REV ~ '. Brightline is billed per sub-brand on one agency contract.') }}
+
+{{ s.matrix_slide(
+  headline='Rally AI (' ~ m.fmt('in_rally_raise', decimals=0) ~ ' raised) buys media; Northpine runs the whole growth loop',
+  points=series_rows('derived_matrix'),
+  x_label='Scope', x_low='One job', x_high='Ads + SEO + email',
+  y_label='Autonomy', y_low='Human runs it', y_high='Agent runs it',
+  quadrants={'tl': 'Autonomous point tools', 'tr': 'Growth agent', 'bl': 'Point tools', 'br': 'Services'},
+  callouts=[
+    {'value': m.in_price_rally_hi, 'label': 'Rally AI top monthly price, for ads alone', 'accent': false},
+    {'value': m.rev_arpa_ex_bl_oct26, 'label': 'Northpine average monthly bill, all three jobs', 'accent': true},
+  ],
+  source="Alex's competitor list; positions are our qualitative judgment from each product's scope") }}
+
+{{ s.chart_slide(
+  headline=m.team_hc_total ~ ' people led by a DTC growth operator and a payments engineer; customer success grew fastest',
+  chart=chart('headcount'),
+  callouts=[
+    {'value': 'CEO', 'label': 'Alex Moreno, co-founder. Former Head of Growth at a DTC brand', 'accent': true},
+    {'value': 'CTO', 'label': 'Sam Whitaker, co-founder. Former staff engineer at a payments company'},
+    {'value': m.team_hc_customer_success, 'label': 'of ' ~ m.team_hc_total ~ ' people work in customer success'},
+  ],
+  source='team.csv (active employees at month end); founder backgrounds from the CEO') }}
+
+{{ s.columns_slide(
+  headline=m.fmt('in_raise', decimals=0) ~ ' takes runway from ' ~ m.burn_runway_months ~ ' to ' ~ m.burn_postraise_runway_current ~ ' months at today’s burn and funds three milestones',
+  items=[
+    {'title': 'Move the legacy base onto Autopilot', 'value': m.der_legacy_customers, 'text': 'paying customers still on pre-May plans. Same-tier new prices add ' ~ m.der_legacy_reprice_upside ~ ' MRR; Scale customers get Autopilot at the same price'},
+    {'title': 'Scale the channels that pay back', 'value': m.ch_cac_app_store, 'text': 'App Store CAC, with Google at ' ~ m.ch_cac_google ~ '. Meta stays capped while its CAC rises'},
+    {'title': 'Keep margin above where it is', 'value': m.der_gm_oct26, 'text': 'gross margin in October. Hold it while agent actions keep growing'},
+  ],
+  band={'value': m.der_arr_12m_at_pace, 'text': 'ARR in 12 months if the May–Oct pace of ' ~ m.der_net_new_mrr_pace ~ ' net new MRR a month simply holds (linear, before any effect of the raise)'},
+  source='Bank balance and burn (3-month average ' ~ m.burn_avg_3m ~ ' a month), Stripe prices and invoices, channel table on slide 8') }}
+
+{# ---------------------------------------------------------------- appendix #}
+
+{{ s.table_slide(
+  appendix='A1',
+  headline="From the KPI sheet's " ~ m.rev_kpi_arr_oct26 ~ ' to ' ~ m.rev_arr_post_oct26 ~ ' ARR: the sheet multiplies cash collected by twelve',
+  columns=['Step', 'ARR effect'],
+  rows=table_rows('derived_a1_bridge', [('step', 'text'), ('usd', 'usd')]),
+  align='lr', total_last=true,
+  source='founder_kpi_sheet.csv, Stripe invoices; each step × 12. Reconciles to the dollar.') }}
+
+{{ s.table_slide(
+  appendix='A2',
+  headline='Cohorts since Autopilot keep more customers at month three than any earlier cohort',
+  columns=['Cohort (first paid)', 'Customers', 'Start MRR', 'Logo m3', 'NRR m3', 'Logo m6', 'NRR m6', 'Logo m12', 'GRR m12', 'NRR m12'],
+  rows=table_rows('derived_a2_cohorts', [('label', 'text'), ('n', 'count'), ('start_mrr_post', 'usd'), ('logo_m3', 'ratio'), ('nrr_m3', 'ratio'), ('logo_m6', 'ratio'), ('nrr_m6', 'ratio'), ('logo_m12', 'ratio'), ('grr_m12', 'ratio'), ('nrr_m12', 'ratio')]),
+  align='lrrrrrrrrr',
+  source='Stripe invoices; cohort = quarter of first month with MRR > 0; retention on MRR after discounts',
+  note='* 2025 Q1 includes customers who started in 2024 (data begins Jan 2025). Dashes: cohort too young.') }}
+
+{{ s.table_slide(
+  appendix='A3',
+  headline='Ad platforms report ' ~ m.ch_meta_trials_platform_vs_internal ~ ' the trials we actually see, so CAC uses our own data only',
+  columns=['Platform', 'Platform-reported trials', 'Trials in our data', 'Ratio', 'Spend'],
+  rows=table_rows('derived_a3_attribution', [('platform', 'text'), ('platform_reported_trials', 'count'), ('internal_trials', 'count'), ('ratio', 'x'), ('platform_spend', 'usd')]),
+  align='lrrrr',
+  callouts=[
+    {'value': m.ch_tiktok_mar_signups, 'label': 'TikTok signups in March 2026 produced ' ~ m.ch_tiktok_mar_trials ~ ' trials and no paying customer', 'accent': false},
+  ],
+  source='ad_platforms_daily.csv (platform-reported, modelled conversions) vs signups_daily.csv, 1 Jun – 31 Oct 2026') }}
+
+{{ s.table_slide(
+  appendix='A4',
+  headline='Support load grows faster than the customer base; a quarter of tickets are about what the agent did',
+  columns=['Quarter', 'Tickets', 'Avg paying customers', 'Tickets per customer', 'About agent behaviour', 'Median first response, hours', 'CSAT (of 5)'],
+  rows=table_rows('derived_a4_support', [('label', 'text'), ('tickets', 'count'), ('avg_paying', 'count'), ('tickets_per_paying', 'x', 1), ('share_agent_related', 'ratio'), ('median_first_response_h', 'hours', 1), ('csat_mean', 'score', 2)]),
+  align='lrrrrrr',
+  source='support_tickets.csv; agent behaviour = "Agent did something unexpected" + "Autopilot approval settings"',
+  note='Per action, Autopilot users undo less than manual users (slide 3); they generate more tickets because the agent does more.') }}
+
+{{ s.table_slide(
+  appendix='A5',
+  headline='Burn is ' ~ m.burn_avg_3m ~ ' a month, and three quarters of cash out is payroll',
+  columns=['Bucket', 'Largest lines', 'Per month, Aug–Oct 2026', 'Share of cash out'],
+  rows=table_rows('derived_a5_opex', [('bucket', 'text'), ('largest_lines', 'text'), ('per_month', 'usd'), ('share', 'ratio')]),
+  align='llrr', total_last=true,
+  callouts=[
+    {'value': m.burn_cash_oct26, 'label': 'cash at 31 Oct 2026', 'accent': true},
+    {'value': m.burn_zero_cash_month, 'label': 'month cash runs out at today’s burn without the round'},
+  ],
+  source='Bank transactions and monthly balances; net burn = money in + money out, 3-month average') }}
+
+{% call s.appendix_slide('A6', 'Definitions used in this deck', source='calc/metrics.csv and out/calc_table.csv in the source repository list the formula and source for every number') %}
+<div class="cols" style="grid-template-columns: 1fr 1fr;">
+  <div class="col"><p><b>ARR</b> = subscription MRR after discounts at 31 Oct 2026 × 12. Annual plans count 1/12 per month. Excludes one-time fees and usage-tier fees ({{ m.der_usage_arr }} run-rate, shown separately).</p>
+  <p><b>Paying customer</b> = billed above $0 for October service. Trials never count. Brightline (an agency billing for many brands) counts as one customer.</p>
+  <p><b>Growth</b> = MRR Oct 2026 ÷ MRR Apr 2026, both from invoices by service month, never cash.</p></div>
+  <div class="col"><p><b>Gross margin</b> = (subscription + usage revenue − LLM inference − hosting − support tools) ÷ revenue, from bank payments.</p>
+  <p><b>CAC</b> = bank marketing spend by channel ÷ new paying customers by Stripe channel tag, May–Oct 2026. Platform-reported conversions are never used.</p>
+  <p><b>Runway</b> = bank cash at 31 Oct 2026 ÷ average net burn of Aug–Oct 2026.</p></div>
+</div>
+{% endcall %}

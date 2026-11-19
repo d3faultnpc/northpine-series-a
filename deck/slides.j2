@@ -1,0 +1,168 @@
+{#- Northpine deck layout macros. Use in the deck template:
+      {% import 'slides.j2' as s %}
+      {{ s.chart_slide(headline='...', chart=chart('name'), source='Stripe invoices, Jan 2025 - Oct 2026') }}
+
+  Every slide = <section class="slide"> with header (kicker, headline, sub), one body, footer
+  ("Source: <source>" + optional note line + page number). Page numbers are automatic; appendix='A2'
+  turns any layout into the appendix variant (kicker "Appendix · A2", smaller headline, page "A2").
+  Optional dict keys are read with .get(), so leave them out instead of passing none.
+
+  Dict shapes:
+    tile / callout : {'value': m.arr_post, 'label': 'ARR, Oct 2026', 'accent': true}
+    column item    : {'title': 'Ads', 'text': 'one line', 'value': m.x (optional)}
+    band           : {'value': m.autopilot_share, 'text': 'of paying customers run Autopilot'}
+    matrix point   : {'label': 'Rally AI', 'x': 0-100, 'y': 0-100, 'accent': true, 'pos': 'right|left|top|bottom', 'sub': 'small line'}
+                     (or rows of series_rows('name') with those columns: coordinates stay out of the template)
+    table row      : ['a', 'b', ...] or {'cells': [...], 'hl': true}
+-#}
+
+{#- ------------------------------------------------------------ building blocks -#}
+
+{% macro footer(source, note=none, page=none) -%}
+<footer class="footer">
+  <div class="src">{% if source %}Source: {{ source }}{% endif %}{% if note %}<span class="fnote">{{ note }}</span>{% endif %}</div>
+  <span class="page">{{ page if page else next_page() }}</span>
+</footer>
+{%- endmacro %}
+
+{#- Generic slide. Body: pass body=<markup> or use {% call s.slide(...) %}<div class="body full">...</div>{% endcall %} -#}
+{% macro slide(headline, source, kicker=none, sub=none, note=none, appendix=none, cls='', body=none) -%}
+<section class="slide{% if appendix %} appendix{% endif %}{% if cls %} {{ cls }}{% endif %}">
+  <header>
+    {% if appendix %}<div class="kicker">Appendix · {{ appendix }}</div>{% elif kicker %}<div class="kicker">{{ kicker }}</div>{% endif %}
+    <h1 class="headline">{{ headline }}</h1>
+    {% if sub %}<p class="sub">{{ sub }}</p>{% endif %}
+  </header>
+  {{ body if body is not none else caller() }}
+  {{ footer(source, note, appendix) }}
+</section>
+{%- endmacro %}
+
+{% macro callouts(items) -%}
+<div class="callouts">
+  {% for c in items %}
+  <div class="callout"><div class="value{% if c.get('accent') %} accent{% endif %}">{{ c.value }}</div><div class="label">{{ c.label }}</div></div>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro chart_body(svg, side=none) -%}
+<div class="body {{ 'with-callouts' if side else 'full' }}">
+  <div class="chart">{{ svg }}</div>
+  {% if side %}{{ callouts(side) }}{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro two_chart_body(left, right, left_title=none, right_title=none) -%}
+<div class="body two">
+  <div class="panel">{% if left_title %}<div class="panel-title">{{ left_title }}</div>{% endif %}<div class="chart">{{ left }}</div></div>
+  <div class="panel">{% if right_title %}<div class="panel-title">{{ right_title }}</div>{% endif %}<div class="chart">{{ right }}</div></div>
+</div>
+{%- endmacro %}
+
+{#- align: one letter per column, 'l' or 'r' (default: first left, rest right). total_last: last row as a total. -#}
+{% macro table(columns, rows, align=none, total_last=false) -%}
+{% set al = align if align else 'l' ~ ('r' * (columns|length - 1)) %}
+<table class="tbl{% if total_last %} total-last{% endif %}">
+  <thead><tr>{% for c in columns %}<th class="{{ 'r' if al[loop.index0] == 'r' else 'l' }}">{{ c }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for row in rows %}
+    {% set cells = row.cells if row is mapping else row %}
+    <tr{% if row is mapping and row.get('hl') %} class="hl"{% endif %}>{% for v in cells %}<td class="{{ 'r' if al[loop.index0] == 'r' else 'l' }}">{{ v }}</td>{% endfor %}</tr>
+  {% endfor %}
+  </tbody>
+</table>
+{%- endmacro %}
+
+{% macro table_body(columns, rows, align=none, total_last=false, side=none) -%}
+<div class="body table-body {{ 'with-callouts' if side else 'full' }}">
+  <div class="tbl-wrap">{{ table(columns, rows, align, total_last) }}</div>
+  {% if side %}{{ callouts(side) }}{% endif %}
+</div>
+{%- endmacro %}
+
+{#- 2x2: x/y in percent of the plot (0 = low end, 100 = high end). quadrants: {'tl':..,'tr':..,'bl':..,'br':..} -#}
+{% macro matrix(points, x_label, y_label, x_low='', x_high='', y_low='', y_high='', quadrants=none) -%}
+<div class="mx-wrap">
+  <div class="mx-ylab">{{ y_label }}</div>
+  <div class="mx">
+    {% if quadrants %}{% for k in ['tl', 'tr', 'bl', 'br'] %}{% if quadrants.get(k) %}<div class="mx-q mx-{{ k }}">{{ quadrants[k] }}</div>{% endif %}{% endfor %}{% endif %}
+    {% if y_high %}<div class="mx-end mx-yhi">{{ y_high }}</div>{% endif %}
+    {% if y_low %}<div class="mx-end mx-ylo">{{ y_low }}</div>{% endif %}
+    {% for p in points %}
+    {% set acc = p.get('accent')|string|lower in ['true', '1', 'yes', 'y'] %}
+    <div class="mx-pt{% if acc %} accent{% endif %} pos-{{ p.get('pos') or 'right' }}" style="left: {{ p.x }}%; bottom: {{ p.y }}%;">
+      <span class="dot"></span><span class="lbl">{{ p.label }}{% if p.get('sub') %}<span class="lsub">{{ p.sub }}</span>{% endif %}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="mx-xaxis"><span>{{ x_low }}</span><span class="mx-xlab">{{ x_label }}</span><span>{{ x_high }}</span></div>
+</div>
+{%- endmacro %}
+
+{% macro matrix_body(points, x_label, y_label, x_low='', x_high='', y_low='', y_high='', quadrants=none, side=none) -%}
+<div class="body mx-body {{ 'with-callouts' if side else 'full' }}">
+  {{ matrix(points, x_label, y_label, x_low, x_high, y_low, y_high, quadrants) }}
+  {% if side %}{{ callouts(side) }}{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro columns_body(items, band=none) -%}
+<div class="body cols-body">
+  <div class="cols" style="grid-template-columns: repeat({{ items|length }}, 1fr);">
+    {% for it in items %}
+    <div class="col">
+      {% if it.get('value') %}<div class="col-value">{{ it.value }}</div>{% endif %}
+      <h3>{{ it.title }}</h3>
+      <p>{{ it.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% if band %}<div class="band"><span class="band-value">{{ band.value }}</span><span class="band-text">{{ band.text }}</span></div>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro tiles_body(tiles) -%}
+<div class="body tiles-row">
+  {% for t in tiles %}
+  <div class="tile"><div class="value{% if t.get('accent') %} accent{% endif %}">{{ t.value }}</div><div class="label">{{ t.label }}</div></div>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{#- ------------------------------------------------------------ slide layouts -#}
+
+{#- (a) cover: kicker, headline, sub, 3 KPI tiles -#}
+{% macro cover(headline, tiles, source, kicker=none, sub=none, note=none) -%}
+{{ slide(headline, source, kicker=kicker, sub=sub, note=note, cls='cover', body=tiles_body(tiles)) }}
+{%- endmacro %}
+
+{#- (b) chart + optional right callout column (2-3 big numbers) -#}
+{% macro chart_slide(headline, chart, source, sub=none, kicker=none, callouts=none, note=none, appendix=none) -%}
+{{ slide(headline, source, kicker=kicker, sub=sub, note=note, appendix=appendix, body=chart_body(chart, callouts)) }}
+{%- endmacro %}
+
+{#- (c) two charts side by side (use chart('x', size='half')) -#}
+{% macro two_chart_slide(headline, left, right, source, left_title=none, right_title=none, sub=none, kicker=none, note=none, appendix=none) -%}
+{{ slide(headline, source, kicker=kicker, sub=sub, note=note, appendix=appendix, body=two_chart_body(left, right, left_title, right_title)) }}
+{%- endmacro %}
+
+{#- (d) table, numeric columns right-aligned; optional callouts at right -#}
+{% macro table_slide(headline, columns, rows, source, align=none, total_last=false, callouts=none, sub=none, kicker=none, note=none, appendix=none) -%}
+{{ slide(headline, source, kicker=kicker, sub=sub, note=note, appendix=appendix, body=table_body(columns, rows, align, total_last, callouts)) }}
+{%- endmacro %}
+
+{#- (e) 2x2 matrix in HTML/CSS -#}
+{% macro matrix_slide(headline, points, x_label, y_label, source, x_low='', x_high='', y_low='', y_high='', quadrants=none, callouts=none, sub=none, kicker=none, note=none, appendix=none) -%}
+{{ slide(headline, source, kicker=kicker, sub=sub, note=note, appendix=appendix, body=matrix_body(points, x_label, y_label, x_low, x_high, y_low, y_high, quadrants, callouts)) }}
+{%- endmacro %}
+
+{#- (f) three (2-4) columns: short title + one line each; optional band with a big number -#}
+{% macro columns_slide(headline, items, source, band=none, sub=none, kicker=none, note=none, appendix=none) -%}
+{{ slide(headline, source, kicker=kicker, sub=sub, note=note, appendix=appendix, body=columns_body(items, band)) }}
+{%- endmacro %}
+
+{#- (g) appendix slide with any body: {% call s.appendix_slide('A2', 'Headline', source='...') %}{{ s.table_body(...) }}{% endcall %} -#}
+{% macro appendix_slide(label, headline, source, sub=none, note=none) -%}
+{{ slide(headline, source, sub=sub, note=note, appendix=label, body=caller()) }}
+{%- endmacro %}

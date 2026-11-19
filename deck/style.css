@@ -86,3 +86,93 @@ html, body {
 
 .note { font-size: 10pt; color: var(--ink-60); }
 .accent { color: var(--accent); }
+
+/* ===== Layout macros (deck/slides.j2) — appended 2026-11-19. Rules above are untouched;
+   these use only the locked variables, font and weights. ===== */
+
+.footer .src { max-width: 11.2in; }
+.footer .fnote { display: block; margin-top: 0.03in; }
+
+/* (a) cover */
+.slide.cover header { padding-top: 0.55in; }
+.body.tiles-row { display: flex; align-items: flex-end; gap: 0.9in; padding-bottom: 0.15in; }
+.tiles-row .tile { border-top: 2px solid var(--ink); padding-top: 0.16in; min-width: 2.4in; }
+
+/* (b) chart + callout column */
+.body.with-callouts { grid-template-columns: 1fr 3in; }
+.callouts { display: flex; flex-direction: column; justify-content: center; gap: 0.32in;
+            border-left: 1px solid var(--ink-15); padding-left: 0.32in; min-width: 0; }
+.callout .value { font-size: 32pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+.callout .value.accent { color: var(--accent); }
+.callout .label { font-size: 11pt; line-height: 1.35; color: var(--ink-60); margin-top: 0.07in; }
+
+/* (c) two charts */
+.body.two { grid-template-columns: 1fr 1fr; }
+.panel { display: grid; grid-template-rows: auto 1fr; min-height: 0; min-width: 0; }
+.panel-title { font-size: 12pt; font-weight: 600; margin-bottom: 0.06in; }
+.panel .chart svg { max-height: 4.5in; }
+
+/* (d) table */
+.body.table-body { align-items: start; }
+.tbl-wrap { min-width: 0; }
+.table-body.full .tbl-wrap { max-width: 10in; }
+.tbl { width: 100%; border-collapse: collapse; font-size: 12pt; line-height: 1.25; }
+.tbl th { font-size: 10pt; font-weight: 600; color: var(--ink-60); text-align: left;
+          padding: 0 0.14in 0.07in; border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+.tbl td { padding: 0.075in 0.14in; border-bottom: 1px solid var(--ink-15); }
+.tbl th:first-child, .tbl td:first-child { padding-left: 0; }
+.tbl th:last-child, .tbl td:last-child { padding-right: 0; }
+.tbl .r { text-align: right; }
+.tbl tr.hl td { font-weight: 600; color: var(--accent); }
+.tbl.total-last tbody tr:last-child td { font-weight: 700; border-top: 1px solid var(--ink); border-bottom: none; }
+.slide.appendix .tbl { font-size: 10.5pt; }
+.slide.appendix .tbl td { padding-top: 0.055in; padding-bottom: 0.055in; }
+
+/* (e) 2x2 matrix */
+.body.mx-body { align-items: stretch; }
+.mx-wrap { display: grid; grid-template-columns: 0.32in 1fr; grid-template-rows: 1fr auto;
+           min-height: 0; padding-right: 0.3in; }
+.mx-ylab { grid-row: 1; grid-column: 1; writing-mode: vertical-rl; transform: rotate(180deg);
+           text-align: center; font-size: 11pt; font-weight: 600; color: var(--ink-80); }
+.mx { grid-row: 1; grid-column: 2; position: relative; min-height: 0;
+      border-left: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+.mx::before, .mx::after { content: ""; position: absolute; background: var(--ink-15); }
+.mx::before { left: 50%; top: 0; bottom: 0; width: 1px; }
+.mx::after { top: 50%; left: 0; right: 0; height: 1px; }
+.mx-xaxis { grid-row: 2; grid-column: 2; display: flex; justify-content: space-between;
+            font-size: 10pt; color: var(--ink-60); padding-top: 0.08in; }
+.mx-xaxis .mx-xlab { font-size: 11pt; font-weight: 600; color: var(--ink-80); }
+.mx-end { position: absolute; left: 0.1in; font-size: 10pt; color: var(--ink-60); }
+.mx-yhi { top: 0.04in; }
+.mx-ylo { bottom: 0.06in; }
+.mx-q { position: absolute; font-size: 10pt; font-weight: 600; letter-spacing: 0.06em;
+        text-transform: uppercase; color: var(--ink-40); }
+.mx-tl { top: 0.1in; left: calc(50% - 0.12in); transform: translateX(-100%); text-align: right; }
+.mx-tr { top: 0.1in; right: 0.12in; text-align: right; }
+.mx-bl { bottom: 0.12in; left: calc(50% - 0.12in); transform: translateX(-100%); text-align: right; }
+.mx-br { bottom: 0.12in; right: 0.12in; text-align: right; }
+.mx-pt { position: absolute; width: 0; height: 0; }
+.mx-pt .dot { position: absolute; width: 0.15in; height: 0.15in; border-radius: 50%;
+              background: var(--ink-60); left: -0.075in; top: -0.075in; }
+.mx-pt.accent .dot { background: var(--accent); width: 0.2in; height: 0.2in; left: -0.1in; top: -0.1in; }
+.mx-pt .lbl { position: absolute; white-space: nowrap; font-size: 12pt; font-weight: 600; line-height: 1.2; }
+.mx-pt.accent .lbl { color: var(--accent); font-weight: 700; }
+.mx-pt .lsub { display: block; font-size: 9.5pt; font-weight: 400; color: var(--ink-60); }
+.mx-pt.pos-right .lbl { left: 0.17in; top: 0; transform: translateY(-0.6em); }
+.mx-pt.pos-left .lbl { right: 0.17in; top: 0; transform: translateY(-0.6em); text-align: right; }
+.mx-pt.pos-top .lbl { bottom: 0.14in; left: 0; transform: translateX(-50%); text-align: center; }
+.mx-pt.pos-bottom .lbl { top: 0.14in; left: 0; transform: translateX(-50%); text-align: center; }
+
+/* (f) columns */
+.body.cols-body { display: flex; flex-direction: column; justify-content: space-between; padding-top: 0.2in; }
+.cols { display: grid; column-gap: 0.5in; }
+.col h3 { font-size: 20pt; font-weight: 700; line-height: 1.2; border-top: 2px solid var(--ink); padding-top: 0.14in; }
+.col p { font-size: 15pt; line-height: 1.45; color: var(--ink-80); margin-top: 0.1in; }
+.col .col-value { font-size: 32pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--accent); margin-bottom: 0.14in; }
+.band { display: flex; align-items: baseline; gap: 0.25in; border-top: 1px solid var(--ink-15); padding-top: 0.22in; }
+.band-value { font-size: 40pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--accent); }
+.band-text { font-size: 15pt; color: var(--ink-80); }
+
+/* (g) appendix variant */
+.slide.appendix .headline { font-size: 20pt; max-width: 12in; }
+.slide.appendix .kicker { color: var(--ink-60); }
