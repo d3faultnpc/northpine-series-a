@@ -38,6 +38,7 @@ def calc():
     print(f"[calc] metrics.csv: {len(m)} rows")
     if (ROOT / "calc" / "checks.py").exists():
         importlib.import_module("checks").run()
+    _script("calc/gate.py")
 
 
 def _script(path):
@@ -50,6 +51,7 @@ def deck():
 
 def memo():
     _script("memo/build.py")
+    _script("calc/export.py")
 
 
 def qa():
