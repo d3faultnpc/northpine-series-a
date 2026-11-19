@@ -129,6 +129,7 @@ def run() -> pd.DataFrame:
         _row("der_legacy_scale_n", 12, "Legacy Scale customers (same price as Scale + Autopilot)", float(mix.loc["Scale (legacy)", "paying"]), "count", "2026-10", "Paying on Scale (legacy)", "stripe_invoices.csv", "", "count", "Legacy Scale $2,499 vs Scale + Autopilot $2,490: Autopilot at no extra price."),
     ]
     rows += _agent_work_rows()
+    rows += _noraise_rows()
     return pd.DataFrame(rows, columns=COLS)
 
 
@@ -196,3 +197,57 @@ def _agent_work_rows():
         out.append(_row(f"der_oct_{col}", slide, f"{name}, Oct 2026 (paying customers)", float(o[col].sum()), "count", "2026-10",
                         f"Sum of {col} over paying customers in Oct 2026", "product_usage_monthly.csv", "month=2026-10, mrr_post>0", f"sum({col})", ""))
     return out
+
+
+def _noraise_rows():
+    """What happens without the round: simple monthly projection from Oct 2026, labelled ASSUMPTION.
+    revenue = subscription + usage; grows linearly by a net-new pace; COGS = Oct COGS share of revenue;
+    other cash costs (payroll, marketing, G&A) either frozen at the Aug–Oct average or growing at the
+    Apr→Oct 2026 monthly increase. Cash in = revenue (ignores annual-prepay timing: conservative)."""
+    t = monthly_totals()
+    b = pd.read_csv(SERIES / "burn_monthly.csv")
+    b["month"] = pd.PeriodIndex(b["month"], freq="M")
+    b = b.set_index("month")
+    b["opex_other"] = b["opex_payroll"] + b["opex_marketing"] + b["opex_ga"]
+    last3 = [OCT26 - 2, OCT26 - 1, OCT26]
+    opex0 = b.loc[last3, "opex_other"].mean()
+    opex_step = (b.loc[OCT26, "opex_other"] - b.loc[APR26, "opex_other"]) / 6
+    rev0 = t.loc[OCT26, "mrr_post"] + t.loc[OCT26, "usage_post"]
+    cogs_share = b.loc[OCT26, "opex_cogs"] / rev0
+    pace = (t.loc[OCT26, "mrr_post"] - t.loc[APR26, "mrr_post"]) / 6
+    cash0 = b.loc[OCT26, "closing_cash"]
+    growth = {"pace": pace, "half": pace / 2, "flat": 0.0}
+    costs = {"freeze": 0.0, "grow": opex_step}
+    rows, series = [], []
+    src = "bank_balance_monthly.csv; bank_transactions.csv; stripe_invoices.csv"
+    for gk, g in growth.items():
+        for ck_, step in costs.items():
+            cash, be, low, out = cash0, None, (cash0, str(OCT26)), None
+            for k in range(1, 37):
+                mth = OCT26 + k
+                rev = rev0 + g * k
+                net = rev * (1 - cogs_share) - (opex0 + step * k)
+                cash += net
+                series.append((gk, ck_, str(mth), rev, net, cash))
+                if be is None and net >= 0:
+                    be = mth
+                if cash < low[0]:
+                    low = (cash, str(mth))
+                if out is None and cash < 0:
+                    out = mth
+            name = f"{gk}_{ck_}"
+            cav = "ASSUMPTION/scenario, not a forecast. Linear growth, no churn shock, no prepay timing; for internal briefing only."
+            rows += [
+                _row(f"der_scn_{name}_breakeven", "", f"No-raise scenario {name}: first month cash-flow ≥ 0", be.strftime("%Y-%m") if be else "none in 36 months", "text", "2026-11..2029-10",
+                     f"growth={gk} ({g:.0f}/mo net new revenue), other costs={ck_} (+{step:.0f}/mo)", src, "", "first k: rev_k×(1−cogs%) − opex_k ≥ 0", cav),
+                _row(f"der_scn_{name}_min_cash", "", f"No-raise scenario {name}: lowest cash balance", low[0], "usd", low[1], "minimum projected bank cash", src, "", "min cumulative", cav),
+                _row(f"der_scn_{name}_cash_out", "", f"No-raise scenario {name}: month cash goes negative", out.strftime("%Y-%m") if out else "never in 36 months", "text", "", "first month projected cash < 0", src, "", "", cav),
+            ]
+    rows += [
+        _row("der_scn_opex0", "", "Other cash costs per month (payroll+marketing+G&A), Aug–Oct 2026 avg", opex0, "usd_per_month", "2026-08..2026-10", "bank buckets", src, "", "mean", ""),
+        _row("der_scn_opex_step", "", "Monthly increase of other cash costs, Apr→Oct 2026", opex_step, "usd_per_month", "2026-04..2026-10", "(Oct − Apr)/6", src, "", "", ""),
+        _row("der_scn_cogs_share", "", "COGS share of revenue, Oct 2026", cogs_share, "ratio", "2026-10", "COGS / (mrr_post+usage)", src, "", "", ""),
+        _row("der_scn_rev0", "", "Recurring revenue Oct 2026 (subscription + usage)", rev0, "usd_per_month", "2026-10", "", src, "", "", ""),
+    ]
+    pd.DataFrame(series, columns=["growth", "costs", "month", "revenue", "net_cash_flow", "cash"]).to_csv(SERIES / "derived_noraise_scenarios.csv", index=False)
+    return rows
