@@ -124,6 +124,29 @@ def consistent(rendered: str, value: float, unit: str) -> bool:
     return abs(x - v) <= 0.5 * 10 ** -dec + 1e-9
 
 
+RU_MONTHS = [("январ",), ("феврал",), ("март",), ("апрел",), ("ма",), ("июн",), ("июл",), ("август",), ("сентябр",), ("октябр",), ("ноябр",), ("декабр",)]
+EN_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def same_month_ru(rendered: str, val) -> bool:
+    """Russian memo renders month metrics as 'июле 2027' / 'декабря 2026': same month and year as the raw value."""
+    mm = re.fullmatch(r"([а-я]+) (\d{4})", rendered.strip())
+    if not mm:
+        return False
+    word, year = mm.groups()
+    hits = [i + 1 for i, (stem,) in enumerate(RU_MONTHS) if word.startswith(stem) and (stem != "ма" or word in ("мая", "мае"))]
+    if len(hits) != 1:
+        return False
+    v = str(val).strip()
+    if v[:4].isdigit():
+        y, mo = int(v[:4]), int(v[5:7])
+    elif v[:3] in EN_MONTHS:
+        y, mo = int(v[-4:]), EN_MONTHS.index(v[:3]) + 1
+    else:
+        return False
+    return (y, mo) == (int(year), hits[0])
+
+
 def check_ids(ids_csv: Path, pdf_txt: str, label: str) -> None:
     ids = pd.read_csv(ids_csv, dtype=str, keep_default_na=False)
     missing, na, wrong, absent, nondefault = [], [], [], [], []
@@ -144,7 +167,9 @@ def check_ids(ids_csv: Path, pdf_txt: str, label: str) -> None:
             default = None
         if rendered != default:
             v = fnum(val)
-            if v is None or not consistent(rendered, v, unit):
+            if same_month_ru(rendered, val):
+                nondefault.append(r.id)
+            elif v is None or not consistent(rendered, v, unit):
                 wrong.append(f"{r.id}: '{rendered}' vs raw {val} ({unit})")
             else:
                 nondefault.append(r.id)

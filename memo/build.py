@@ -29,13 +29,32 @@ strong { font-weight: 600; }
 """
 
 
+MONTHS_RU = {
+    "gen": ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"],
+    "prep": ["январе", "феврале", "марте", "апреле", "мае", "июне", "июле", "августе", "сентябре", "октябре", "ноябре", "декабре"],
+}
+MONTH_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def month_ru(m, mid: str, case: str) -> str:
+    """Month-valued metric ('2027-07' or 'Jul 2027') -> Russian month in the given case: 'июле 2027'."""
+    v = str(m._row(mid)["value"]).strip()
+    if v[:4].isdigit():
+        y, mo = int(v[:4]), int(v[5:7])
+    else:
+        mo, y = MONTH_EN.index(v[:3]) + 1, int(v[-4:])
+    s = f"{MONTHS_RU[case][mo - 1]} {y}"
+    m.used[mid] = s
+    return s
+
+
 def main():
     m = Metrics(ROOT / "calc" / "metrics.csv")
     env = Environment(loader=FileSystemLoader(str(ROOT / "memo")), undefined=StrictUndefined, autoescape=False)
-    md = env.get_template("memo.md.j2").render(m=m)
+    md = env.get_template("memo.md.j2").render(m=m, mon=lambda mid, case="prep": month_ru(m, mid, case))
     body = markdown.markdown(md)
-    body = body.replace("</h1>", "</h1><div class='meta'>From: Zakhar, Chief of Staff · To: Alex · Data cut-off 31 Oct 2026 · Deck, source and calc table: github.com/d3faultnpc/northpine-series-a</div>", 1)
-    html = f"<!doctype html><html><head><meta charset='utf-8'><title>Note to Alex</title><style>{CSS}</style></head><body>{body}</body></html>"
+    body = body.replace("</h1>", "</h1><div class='meta'>От: Захар, Chief of Staff · Кому: Alex · Данные по 31 октября 2026 · Всё в репо: github.com/d3faultnpc/northpine-series-a</div>", 1)
+    html = f"<!doctype html><html lang='ru'><head><meta charset='utf-8'><title>Записка Alex</title><style>{CSS}</style></head><body>{body}</body></html>"
     out = ROOT / "out"
     (out / "memo.html").write_text(html)
     (out / "memo.md").write_text(md)

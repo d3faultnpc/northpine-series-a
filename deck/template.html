@@ -98,7 +98,8 @@
     {'value': m.rev_top10_share, 'label': 'of MRR from the ten largest customers'},
     {'value': m.rev_growth_apr_oct_ex_bl, 'label': 'growth since April without Brightline'},
   ],
-  source=SRC_REV ~ '. Brightline is billed per sub-brand on one agency contract.') }}
+  source=SRC_REV ~ '. Brightline is billed per sub-brand on one agency contract.',
+  note='The ' ~ m.rev_arr_post_oct26 ~ ' ARR includes Brightline (' ~ m.der_brightline_arr ~ '), counted as one customer. Without Brightline, ARR is ' ~ m.der_arr_post_ex_bl ~ '.') }}
 
 {{ s.matrix_slide(
   headline='Rally AI (' ~ m.fmt('in_rally_raise', decimals=0) ~ ' raised) buys media; Northpine runs the whole growth loop',

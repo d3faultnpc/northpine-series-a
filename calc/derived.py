@@ -128,6 +128,13 @@ def run() -> pd.DataFrame:
              "stripe_prices.csv; stripe_invoices.csv", "", "Σ n×Δprice", "Scenario arithmetic at list prices; assumes zero churn from migration."),
         _row("der_legacy_scale_n", 12, "Legacy Scale customers (same price as Scale + Autopilot)", float(mix.loc["Scale (legacy)", "paying"]), "count", "2026-10", "Paying on Scale (legacy)", "stripe_invoices.csv", "", "count", "Legacy Scale $2,499 vs Scale + Autopilot $2,490: Autopilot at no extra price."),
     ]
+    from load import customer_month_mrr, brightline_id
+    cm = customer_month_mrr()
+    bl_oct = cm[(cm["month"] == OCT26) & (cm["customer"] == brightline_id())]["mrr_post"].sum()
+    rows += [
+        _row("der_brightline_arr", 9, "Brightline ARR inside the headline ARR (Oct 2026)", bl_oct * 12, "usd", "2026-10", "Brightline mrr_post Oct 2026 × 12", "stripe_invoices.csv", "customer = Brightline", "mrr×12", "Included in the headline ARR; Brightline counts as 1 of the paying customers."),
+        _row("der_arr_post_ex_bl", 9, "ARR excluding Brightline (Oct 2026)", (t.loc[OCT26, "mrr_post"] - bl_oct) * 12, "usd", "2026-10", "(mrr_post Oct 2026 − Brightline mrr_post) × 12", "stripe_invoices.csv", "customer ≠ Brightline", "(mrr−bl)×12", ""),
+    ]
     rows += _agent_work_rows()
     rows += _noraise_rows()
     return pd.DataFrame(rows, columns=COLS)
@@ -247,6 +254,8 @@ def _noraise_rows():
         _row("der_scn_opex0", "", "Other cash costs per month (payroll+marketing+G&A), Aug–Oct 2026 avg", opex0, "usd_per_month", "2026-08..2026-10", "bank buckets", src, "", "mean", ""),
         _row("der_scn_opex_step", "", "Monthly increase of other cash costs, Apr→Oct 2026", opex_step, "usd_per_month", "2026-04..2026-10", "(Oct − Apr)/6", src, "", "", ""),
         _row("der_scn_cogs_share", "", "COGS share of revenue, Oct 2026", cogs_share, "ratio", "2026-10", "COGS / (mrr_post+usage)", src, "", "", ""),
+        _row("der_scn_gp_step", "", "Monthly increase of gross profit at May–Oct pace", pace * (1 - cogs_share), "usd_per_month", "2026-05..2026-10", "net new MRR pace × (1 − COGS share)", src, "", "pace×(1−cogs%)", "ASSUMPTION: linear pace."),
+        _row("der_scn_net_step", "", "Monthly burn reduction if costs keep growing as in 2026", pace * (1 - cogs_share) - opex_step, "usd_per_month", "", "gross-profit step − other-cost step", src, "", "", "ASSUMPTION: linear pace."),
         _row("der_scn_rev0", "", "Recurring revenue Oct 2026 (subscription + usage)", rev0, "usd_per_month", "2026-10", "", src, "", "", ""),
     ]
     pd.DataFrame(series, columns=["growth", "costs", "month", "revenue", "net_cash_flow", "cash"]).to_csv(SERIES / "derived_noraise_scenarios.csv", index=False)

@@ -4,7 +4,7 @@ Chief of Staff take-home. Northpine is a fictional AI growth agent for Shopify b
 
 **Deliverables**
 - [Investor deck (PDF)](out/deck.pdf): 12 slides plus appendix A1–A6
-- [One-page note to the CEO (PDF)](out/memo.pdf)
+- [One-page note to the CEO (PDF, in Russian)](out/memo.pdf)
 - [Calc table](out/calc_table.csv): every number in the deck and memo, with definition, source, filter and formula
 - Supporting files: [data-quality log](calc/data_quality.csv), [checks vs the founder's snapshot](calc/checks.txt), [all metrics](calc/metrics.csv), [monthly series](calc/series/)
 
