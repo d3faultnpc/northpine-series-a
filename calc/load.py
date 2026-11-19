@@ -139,8 +139,8 @@ def customer_month_mrr() -> pd.DataFrame:
     Columns: customer, month, mrr_pre, mrr_post, usage_post, plan, is_legacy, is_autopilot_plan,
     is_annual, segment, channel, is_brightline.
     Monthly invoices -> their service-period start month. Annual -> /12 for 12 months.
-    Paid invoices only; duplicate-charge refunds do not reduce MRR (the invoice stood);
-    customer-requested refunds and lost disputes reduce that invoice's recurring amount
+    Paid invoices only. All refunds (incl. 'duplicate': the data has no second succeeded charge
+    for them, DQ11) and lost disputes reduce that invoice's recurring amount
     pro-rata (conservative). Records after the cut-off are ignored.
     """
     inv = invoices_parsed()
@@ -148,7 +148,7 @@ def customer_month_mrr() -> pd.DataFrame:
 
     # conservative reductions: requested refunds + lost disputes (dated <= cut-off)
     ref = load("stripe_refunds")
-    ref = ref[(ref["reason"] != "duplicate") & (ref["created"] <= CUTOFF)]
+    ref = ref[ref["created"] <= CUTOFF]  # incl. 'duplicate': no second succeeded charge exists (DQ11)
     dsp = load("stripe_disputes")
     dsp = dsp[(dsp["status"] == "lost") & (dsp["created"] <= CUTOFF)]
     clawback = pd.concat([ref[["invoice", "amount_usd"]], dsp[["invoice", "amount_usd"]]])

@@ -1,0 +1,81 @@
+date,stripe_customer_id,customer_name,segment,score,comment,autopilot_oct26
+2026-06-01,cus_NQY2JPezwibgwV,Harbor Mercantile,Agency,9,,True
+2026-06-02,cus_JJ2mMymZbZO7aK,River Cycles,SMB,10,Game changer!!,False
+2026-06-03,cus_AiZNKy11WjFBm9,Fern Mercantile,SMB,9,Saves time,False
+2026-06-05,cus_9TTtiPRyhUeFQg,Paper Supply,SMB,10,Nice team,False
+2026-06-05,cus_Cv7gdD9YFEaLdv,Ember Studio,Mid,10,Game changer!!,True
+2026-06-08,cus_4Lydy5fF5w7lPB,Pine & Co,Mid,10,Love it,True
+2026-06-12,cus_0eNma7AicA2ehF,Thistle & Co,Mid,10,Works well,False
+2026-06-13,cus_fcfekz2EnjkLTH,Willow Cycles,Mid,9,Saves time,False
+2026-06-15,cus_FxfnYs17S0uOQN,Bramble Kitchen,SMB,9,Nice team,True
+2026-06-16,cus_cRUUbeYCeurAbR,Hollow Coffee,SMB,9,AI that actually works,False
+2026-06-17,cus_1fHaEX5IKMRsyj,Stone Lab,Mid,9,Love it,True
+2026-06-17,cus_tAXEl1lhr2X96f,Saffron Jewelry,Mid,9,"Seamless onboarding, very modern UI",False
+2026-06-18,cus_dU7eopRQLpQI2q,Ember Tea House,Mid,10,Nice team,False
+2026-06-19,cus_6SebdclEJjlIuh,Saffron Gardens,SMB,9,"Seamless onboarding, very modern UI",True
+2026-06-19,cus_DxiiP0dKsL383A,Stone Goods,SMB,10,,True
+2026-06-23,cus_ZZLGgk01sFi8g0,Cobalt Gardens,Mid,10,ok,True
+2026-06-24,cus_Z2uRWPthvALxGk,Cedar Lab,SMB,10,,True
+2026-06-26,cus_x1LaotyaC9TZGo,Little Lab,Mid,10,Reports are nice,True
+2026-06-27,cus_zsxxhLe9YumpZM,Velvet Bakery,SMB,9,,False
+2026-07-07,cus_JJ2mMymZbZO7aK,River Cycles,SMB,10,,False
+2026-07-12,cus_TMEXTdhc7meRoJ,Indigo Goods,SMB,9,Very easy to use,True
+2026-07-18,cus_9TTtiPRyhUeFQg,Paper Supply,SMB,9,,False
+2026-07-18,cus_ui2a7Zs7F5ccrN,Birch Provisions,SMB,9,Saves time,False
+2026-07-26,cus_AiZNKy11WjFBm9,Fern Mercantile,SMB,10,Works well,False
+2026-08-01,cus_gVAEOt935Q0LNk,Ember Candle Co,Mid,10,Pretty good,True
+2026-08-01,cus_ijMjjAohLVkHSh,Copper & Co,SMB,10,Great product,False
+2026-08-02,cus_w8wPSwbkgM8jO1,Fern Coffee,SMB,9,Nice team,True
+2026-08-07,cus_eLOcuGfKPjkMfi,Saffron Skin,Agency,9,,False
+2026-08-08,cus_MrrOf4NVJOes6o,Hollow Atelier,SMB,9,,True
+2026-08-11,cus_Eq4azYSh4cOOR4,Salt Candle Co,SMB,9,Reports are nice,True
+2026-08-12,cus_LuU6uEhjenXtn0,Birch Cycles,SMB,9,Good value,False
+2026-08-13,cus_yYBaDprcCbIcax,Salt Lab,SMB,10,"Seamless onboarding, very modern UI",True
+2026-08-13,cus_1foiQHfshudaHF,Ember Jewelry,Mid,10,Pretty good,True
+2026-08-14,cus_xODB8cmfSccnpV,River Botanics,SMB,9,AI that actually works,True
+2026-08-15,cus_q0koPtSQ1lLxKC,Saffron Mercantile,SMB,9,Reports are nice,False
+2026-08-17,cus_zkVOVm9bCrji0W,Cobalt Cycles,SMB,10,Great product,True
+2026-08-19,cus_qncjkXVvHrFIEB,Moss Home,SMB,10,,True
+2026-08-19,cus_PEfarNmoFvNmp3,Golden Bakery,Mid,10,Great product,False
+2026-08-22,cus_w2M5GGOBzUVnI0,Bramble Bakery,Mid,10,,True
+2026-08-24,cus_JJ2mMymZbZO7aK,River Cycles,SMB,10,Love it,False
+2026-08-27,cus_15ZxqtU1sVwNXn,Cedar Apparel,SMB,10,Pretty good,True
+2026-08-28,cus_fcfekz2EnjkLTH,Willow Cycles,Mid,9,Would recommend,False
+2026-09-01,cus_4OF3L00V4qDUKh,Lark Coffee,Agency,10,Saves time,True
+2026-09-01,cus_uQjCpqJ7FXqcNr,Hollow Cycles,SMB,10,Love it,True
+2026-09-01,cus_UlaTHwiWLB6qVg,Saffron & Co,Mid,10,,True
+2026-09-02,cus_48ug5Lr4hdcHKq,Driftwood Pet Co,Mid,9,Love it,True
+2026-09-03,cus_baV6hLvexXIK0n,Driftwood Cycles,Mid,9,Nice team,True
+2026-09-03,cus_lizbEQVk64MAMz,Golden Market,Mid,9,Game changer!!,False
+2026-09-06,cus_cLM68wO7kgwXWJ,Coast Coffee,Mid,9,ok,False
+2026-09-07,cus_HjW9dip3ZfDeDE,Lark Tea House,Mid,9,Game changer!!,False
+2026-09-09,cus_w8wPSwbkgM8jO1,Fern Coffee,SMB,10,Very easy to use,True
+2026-09-09,cus_CHNfeQvmZxp7Rn,Olive Naturals,SMB,10,Saves time,False
+2026-09-11,cus_92Rfyds58H6ui4,Little Pet Co,Mid,9,Good value,True
+2026-09-14,cus_C0dk74qwVnDTXR,Velvet Botanics,SMB,10,"It is the first tool I open in the morning. I check what the agent did overnight, approve two things and get on with my day.",False
+2026-09-15,cus_IENI33Z1i8CPQH,Marigold Coffee,Mid,10,Very easy to use,False
+2026-09-16,cus_dEuJaog3nIhtPT,Birch Studio,SMB,9,Would recommend,False
+2026-09-24,cus_cQw37F1OfMBjAO,Harbor Pet Co,SMB,9,Very easy to use,True
+2026-09-26,cus_mXsOKAOhvKjRLR,Harbor Kitchen,SMB,9,"Seamless onboarding, very modern UI",False
+2026-09-28,cus_90844poovUCoPq,Sage Kids,Mid,10,,True
+2026-09-28,cus_kh8I4aIHf3fToc,Thistle Supply,SMB,9,Pretty good,True
+2026-10-01,cus_yBCHN2TALCxMFD,Thistle Ceramics,SMB,10,AI that actually works,False
+2026-10-03,cus_WVNmIuwRs4yIST,Silver Ceramics,SMB,10,AI that actually works,True
+2026-10-05,cus_1foiQHfshudaHF,Ember Jewelry,Mid,9,ok,True
+2026-10-05,cus_wIZ9KkRjz5Sc8p,Olive Jewelry,SMB,10,,True
+2026-10-06,cus_CHNfeQvmZxp7Rn,Olive Naturals,SMB,10,Would recommend,False
+2026-10-07,cus_L1YFlPg2WXyFtl,Moss Outdoors,Agency,9,Love it,False
+2026-10-09,cus_vjlHk52T2b8Pxq,Coast Threads,SMB,9,,True
+2026-10-11,cus_NM7ai7PVmvtyFP,Ember Atelier,Agency,9,,False
+2026-10-12,cus_DHmrYdr03n2Fzu,River Gardens,Mid,9,Works well,False
+2026-10-13,cus_90844poovUCoPq,Sage Kids,Mid,10,,True
+2026-10-14,cus_kh8I4aIHf3fToc,Thistle Supply,SMB,10,Great product,True
+2026-10-14,cus_UlaTHwiWLB6qVg,Saffron & Co,Mid,10,We let go of our ad agency in week three. In October Autopilot launched 214 ad variations for us and blended ROAS went from 2.1 to 3.4.,True
+2026-10-14,cus_sJUStJOmjkI0m5,Brightline Agency (reseller),Agency,10,Northpine lets our team of 6 run ads for 41 brands. We could not do that with people.,False
+2026-10-15,cus_yYBaDprcCbIcax,Salt Lab,SMB,10,Love it,True
+2026-10-15,cus_dZ5Ado7jbC1J12,Honey Atelier,SMB,9,Great product,False
+2026-10-16,cus_q2QSvnG8xglqgm,Indigo Kids,SMB,10,Pretty good,True
+2026-10-18,cus_KM40hq60R6hRmY,Juniper Pet Co,Agency,10,Great product,False
+2026-10-20,cus_x1LaotyaC9TZGo,Little Lab,Mid,9,Love it,True
+2026-10-24,cus_u90oO45P7PT765,Cedar Cycles,Mid,9,AI that actually works,False
+2026-10-24,cus_ODP6BcQFjsgAil,Willow Kids,Mid,9,Pretty good,True

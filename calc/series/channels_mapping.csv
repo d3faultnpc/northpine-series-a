@@ -1,0 +1,9 @@
+channel,stripe_channel,utm_source,ad_platform,bank_category,mapping_note
+meta,Meta ads,meta_ads,meta,Marketing - Paid social,exact
+google,Google ads,google_ads,google,Marketing - Paid search,exact
+app_store,Shopify App Store,shopify_app_store,,Marketing - App Store ads,no platform data file; bank line = Shopify App Store ads
+content,Content / SEO,organic_search,,Marketing - Content,organic_search UTM assumed = Content/SEO (SEO content drives organic search)
+partners,Partners & agencies,partner_referral,,Marketing - Partner commissions (20% of first-year MRR),"bank = PartnerStack commissions, 20% of first-year MRR of partner-sourced customers"
+outbound,Outbound,,,Marketing - Outbound tools,"no UTM source for outbound (sales-sourced, not web signup)"
+tiktok,TikTok,tiktok_organic,,,organic UTM; no bank spend line -> no direct spend
+direct,,direct,,,web UTM only; no Stripe channel value and no spend

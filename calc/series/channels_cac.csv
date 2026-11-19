@@ -1,0 +1,10 @@
+channel,stripe_channel,bank_category,spend,new_paying,cac,arpa_new,arpa_new_first_month,new_still_paying_oct26,stripe_customers_created,trials,trial_to_paid,cac_note
+meta,Meta ads,Marketing - Paid social,107439.57,53,2027.1616981132076,1082.182389937107,1082.182389937107,50,169.0,181.0,0.292817679558011,
+google,Google ads,Marketing - Paid search,29360.82,26,1129.2623076923078,1071.7820512820513,1082.5128205128206,26,101.0,109.0,0.23853211009174313,
+app_store,Shopify App Store,Marketing - App Store ads,7920.0,43,184.1860465116279,1125.0,1145.4418604651162,39,143.0,143.0,0.3006993006993007,
+content,Content / SEO,Marketing - Content,54000.0,19,2842.1052631578946,947.1929824561404,947.1929824561404,16,53.0,69.0,0.2753623188405797,
+partners,Partners & agencies,Marketing - Partner commissions (20% of first-year MRR),70313.2,38,1850.3473684210526,1193.897807017544,1238.5964912280704,38,63.0,82.0,0.4634146341463415,"commissions = 20% of first-year MRR, paid on customers acquired up to 12m earlier"
+outbound,Outbound,Marketing - Outbound tools,36000.0,5,7200.0,379.0,379.0,5,24.0,,,
+tiktok,TikTok,,,0,,,,0,0.0,15.0,0.0,no direct spend
+direct,,,,0,,,,0,,38.0,,no direct spend
+blended,all,all Marketing - *,305033.58999999997,184,1657.7912499999998,1080.7433876811594,1096.268115942029,174,553.0,637.0,0.28885400313971743,

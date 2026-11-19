@@ -1,0 +1,12 @@
+plan,customers,paying,mrr_post,mrr_pre
+Scale (legacy),33,33,76095.6,79470.0
+Scale + Autopilot,30,27,62538.5,72700.0
+Agency reseller (custom),1,1,58000.0,58000.0
+Pro + Autopilot,36,36,52144.5,53040.0
+Growth,48,48,32784.0,32994.0
+Pro (legacy),29,29,27945.15,28095.0
+Scale + Autopilot (annual),8,8,16600.0,16600.0
+Starter,47,47,13693.45,14053.0
+Growth (legacy),28,28,13236.0,13236.0
+Pro + Autopilot (annual),8,8,9933.333333333334,9933.333333333334
+Starter (legacy),34,34,6648.0,6678.0

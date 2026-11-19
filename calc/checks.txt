@@ -1,0 +1,27 @@
+id | expected | actual | delta_pct | status | reason
+---
+rev_kpi_mrr_oct26 | 503000 | 5.03e+05 | +0.0% | ok | 
+rev_cash_collected_apr26 | 158000 | 1.581e+05 | +0.0% | ok | 
+rev_cash_collected_oct26 | 503000 | 5.032e+05 | +0.0% | ok | 
+rev_mrr_pre_pit | 448000 | 3.848e+05 | -14.1% | FLAG | snapshot's 448k includes usage tiers (~63k pre-discount); §3 excludes usage
+rev_subs_active_count | 296 | 296 | +0.0% | ok | 
+rev_subs_past_due_count | 6 | 6 | +0.0% | ok | 
+rev_subs_trialing_count | 37 | 37 | +0.0% | ok | 
+rev_paying_customers_oct26 | 290 | 299 | +3.1% | FLAG | snapshot counts paid invoices by paid month; ours = mrr_post>0 in service month incl. annual spread
+ret_ap_enabled_all_oct26 | 192 | 192 | +0.0% | ok | 
+ret_nps_2026q4 | 50 | 50 | +0.0% | ok | 
+ret_managed_spend_oct26 | 7400000 | 7.449e+06 | +0.7% | ok | accepted with caveat
+burn_cash_oct26 | 2018000 | 2.018e+06 | +0.0% | ok | 
+burn_net_oct26 | 222000 | 2.221e+05 | +0.0% | ok | 
+gm_cogs_oct26 | 77000 | 7.683e+04 | -0.2% | ok | 
+der_gm_oct26 | 0.83 | 0.8216 | -1.0% | ok | accepted with caveat
+ch_meta_trials_platform_reported | 256 | 255.7 | -0.1% | ok | 
+ch_meta_trials_internal | 153 | 153 | +0.0% | ok | 
+ch_tiktok_mar_signups | 1055 | 1055 | +0.0% | ok | 
+ch_tiktok_mar_trials | 33 | 33 | +0.0% | ok | 
+team_hc_total | 31 | 31 | +0.0% | ok | 
+team_base_payroll_annual | 4660000 | 4.656e+06 | -0.1% | ok | 
+dq_refunds_total | 27900 | 2.786e+04 | -0.1% | ok | 
+dq_disputes_n | 5 | 5 | +0.0% | ok | 
+
+2 flagged of 23. Growth has no expected value: snapshot's 2.8x divided normalized Oct by cash Apr.

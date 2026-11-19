@@ -1,0 +1,13 @@
+step,value_usd
+kpi_arr_oct26,6036000.0
+kpi_vs_stripe_cash,1956.0
+add_back_discounts_in_cash,207960.0
+less_one_time_fees,-234000.0
+less_usage,-757524.0
+less_annual_prepay_11_12,-875600.0
+add_annual_prepaid_earlier_1_12,238800.0
+timing_paid_vs_service_month,0.0
+less_discounts_recurring,-182169.59999999998
+less_refund_dispute_clawbacks,1.3096723705530167e-10
+residual,0.0
+arr_post_oct26,4435422.4
