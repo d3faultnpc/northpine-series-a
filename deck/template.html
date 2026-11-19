@@ -19,7 +19,7 @@
   chart=chart('price_ladder'),
   callouts=[
     {'value': m.rev_arpa_ex_bl_oct26, 'label': 'average monthly bill, Oct 2026 (excl. Brightline)', 'accent': true},
-    {'value': m.fmt('in_price_hire_lo', unit='usd_k') ~ '+', 'label': 'monthly cost of the cheapest alternative that does all three jobs: a hire'},
+    {'value': m.fmt('in_price_growlane_lo', unit='usd_k') ~ '+', 'label': 'monthly retainer of an AI-enabled agency, the cheapest service that runs all three jobs'},
   ],
   source="Alex's competitor list (hire, agency and Rally AI prices as listed); Northpine = Oct 2026 MRR ÷ paying customers, excl. Brightline") }}
 
@@ -30,19 +30,19 @@
     {'title': 'SEO content', 'value': m.der_oct_articles_published, 'text': 'articles written and published on customer stores in October'},
     {'title': 'Lifecycle email', 'value': m.der_oct_emails_sent_by_agent, 'text': 'emails sent by the agent in October, from flows it built on store data'},
   ],
-  band={'value': m.ret_ap_adoption_oct26, 'text': 'of paying customers run Autopilot: the agent acts without asking. They undo ' ~ m.fmt('ret_beh_on_undo_rate_oct26', decimals=1) ~ ' of its actions, versus ' ~ m.fmt('ret_beh_off_xbl_undo_rate_oct26', decimals=1) ~ ' for manual users'},
-  source='Product usage, Oct 2026, paying customers. Autopilot = autopilot_enabled flag. Undo rate = actions undone ÷ agent actions; manual users excl. Brightline') }}
+  band={'value': m.ret_ap_adoption_oct26, 'text': 'of paying customers run Autopilot: the agent acts without asking first. They undo ' ~ m.fmt('ret_beh_on_undo_rate_oct26', decimals=1) ~ ' of its actions'},
+  source='Product usage, Oct 2026, paying customers. Autopilot = autopilot_enabled flag. Undo rate = actions undone ÷ agent actions') }}
 
 {{ s.chart_slide(
   headline='Autopilot was the inflection: net new MRR went from ' ~ m.fmt('der_net_new_mrr_pre', unit='usd_k') ~ ' to ' ~ m.fmt('der_net_new_mrr_pace', unit='usd_k') ~ ' a month, and Autopilot plans brought ' ~ m.rev_drvg_autopilot_share ~ ' of it',
   chart=chart('mrr_by_plan'),
   callouts=[
-    {'value': m.der_net_new_mrr_accel, 'label': 'net new MRR per month, May–Oct vs the six months before', 'accent': true},
+    {'value': m.rev_mrr_post_oct26, 'label': 'MRR in October, from ' ~ m.rev_mrr_post_apr26 ~ ' in April', 'accent': true},
     {'value': m.rev_pv_volume_share, 'label': 'of the growth since April is more customers, not higher prices'},
     {'value': m.rev_growth_apr_oct_ex_bl, 'label': 'growth since April excluding our largest customer'},
   ],
   source=SRC_REV,
-  note='Autopilot and new pricing launched together in May 2026, so their effects overlap. Shares are accounting attribution, not causal effect.') }}
+  note='Autopilot launched in May 2026 bundled into the new Pro and Scale plans, together with new pricing: effects overlap. Shares are accounting attribution, not causal effect.') }}
 
 {{ s.chart_slide(
   headline='Brands now trust the agent with ' ~ m.ret_managed_spend_oct26 ~ ' of ad spend a month, ' ~ m.ret_managed_spend_growth_apr_oct26 ~ ' what they gave it in April',
@@ -51,15 +51,15 @@
     {'value': m.ret_managed_spend_annualized_oct26, 'label': 'annualized ad spend under management', 'accent': true},
     {'value': m.ret_take_rate_oct26, 'label': 'our subscription revenue as a share of that spend'},
   ],
-  source='Product usage: managed_ad_spend_usd summed over all customers, Jan 2025 – Oct 2026',
+  source='Product telemetry (managed_ad_spend_usd), all customers, Jan 2025 – Oct 2026; not reconciled to ad-platform invoices. Annualized = October × 12',
   note='Ad spend is the customers’ money, not our revenue. Brightline brands are ' ~ m.ret_managed_spend_brightline_share_oct26 ~ ' of Oct spend.') }}
 
 {{ s.two_chart_slide(
-  headline='Customers stay longer since Autopilot: monthly logo churn fell from ' ~ m.fmt('ret_logo_churn_avg_pre', decimals=1) ~ ' to ' ~ m.fmt('ret_logo_churn_avg_post', decimals=1) ~ ', and NPS rose to ' ~ m.ret_nps_2026q4,
+  headline='Customers stay longer since Autopilot: monthly logo churn fell from ' ~ m.fmt('ret_logo_churn_avg_pre', decimals=1) ~ ' to ' ~ m.fmt('ret_logo_churn_avg_post', decimals=1) ~ ', and NPS went from ' ~ m.fmt('ret_nps_2026q1', unit='score') ~ ' to ' ~ m.fmt('ret_nps_2026q3', unit='score') ~ '–' ~ m.fmt('ret_nps_2026q4', unit='score'),
   left=chart('logo_churn', size='half'), left_title='Monthly logo churn',
   right=chart('nps_quarterly', size='half'), right_title='Net Promoter Score',
   source='Stripe (paying = MRR > 0), NPS survey responses. Churn averages: Nov 2025–Apr 2026 vs May–Oct 2026',
-  note='Since May, Autopilot customers keep ' ~ m.ret_ap_all_xbl_on_nrr5 ~ ' of revenue after five months vs ' ~ m.ret_ap_all_xbl_off_nrr5 ~ ' for the rest (excl. Brightline; self-selected groups). * Q4 = October only.') }}
+  note='Since May, Autopilot customers keep ' ~ m.ret_ap_all_xbl_on_nrr5 ~ ' of revenue after five months (n=' ~ m.ret_ap_all_xbl_on_n5 ~ ') vs ' ~ m.ret_ap_all_xbl_off_nrr5 ~ ' for the rest (n=' ~ m.ret_ap_all_xbl_off_n5 ~ '); excl. Brightline, self-selected groups. * Q4 = October only.') }}
 
 {{ s.chart_slide(
   headline='Gross margin is back to ' ~ m.der_gm_oct26 ~ ' after inference costs pushed it to ' ~ m.der_gm_min ~ ' in ' ~ m.der_gm_min_month,
@@ -113,7 +113,7 @@
   source="Alex's competitor list; positions are our qualitative judgment from each product's scope") }}
 
 {{ s.chart_slide(
-  headline=m.team_hc_total ~ ' people led by a DTC growth operator and a payments engineer; customer success grew fastest',
+  headline=m.team_hc_total ~ ' people led by a DTC growth operator and a payments engineer; customer success grew most in 2026',
   chart=chart('headcount'),
   callouts=[
     {'value': 'CEO', 'label': 'Alex Moreno, co-founder. Former Head of Growth at a DTC brand', 'accent': true},
@@ -123,14 +123,14 @@
   source='team.csv (active employees at month end); founder backgrounds from the CEO') }}
 
 {{ s.columns_slide(
-  headline=m.fmt('in_raise', decimals=0) ~ ' takes runway from ' ~ m.burn_runway_months ~ ' to ' ~ m.burn_postraise_runway_current ~ ' months at today’s burn and funds three milestones',
+  headline=m.fmt('in_raise', decimals=0) ~ ' lets burn rise to ' ~ m.burn_postraise_maxburn_24m ~ ' a month, ' ~ m.fmt('burn_postraise_multiple_of_current', unit='x') ~ ' today, with 24 months of runway for three milestones',
   items=[
     {'title': 'Move the legacy base onto Autopilot', 'value': m.der_legacy_customers, 'text': 'paying customers still on pre-May plans. Same-tier new prices add ' ~ m.der_legacy_reprice_upside ~ ' MRR; Scale customers get Autopilot at the same price'},
     {'title': 'Scale the channels that pay back', 'value': m.ch_cac_app_store, 'text': 'App Store CAC, with Google at ' ~ m.ch_cac_google ~ '. Meta stays capped while its CAC rises'},
     {'title': 'Keep margin above where it is', 'value': m.der_gm_oct26, 'text': 'gross margin in October. Hold it while agent actions keep growing'},
   ],
   band={'value': m.der_arr_12m_at_pace, 'text': 'ARR in 12 months if the May–Oct pace of ' ~ m.der_net_new_mrr_pace ~ ' net new MRR a month simply holds (linear, before any effect of the raise)'},
-  source='Bank balance and burn (3-month average ' ~ m.burn_avg_3m ~ ' a month), Stripe prices and invoices, channel table on slide 8') }}
+  source='Bank: cash ' ~ m.burn_cash_oct26 ~ ', 3-month average burn ' ~ m.burn_avg_3m ~ ' a month (' ~ m.burn_runway_months ~ ' months of runway today; ' ~ m.burn_postraise_runway_current ~ ' after the raise at today’s burn). Stripe prices and invoices; channel table on slide 8') }}
 
 {# ---------------------------------------------------------------- appendix #}
 
@@ -144,7 +144,7 @@
 
 {{ s.table_slide(
   appendix='A2',
-  headline='Cohorts since Autopilot keep more customers at month three than any earlier cohort',
+  headline='The 2026 Q2 cohort, mostly after launch, kept more customers at month three than any earlier cohort',
   columns=['Cohort (first paid)', 'Customers', 'Start MRR', 'Logo m3', 'NRR m3', 'Logo m6', 'NRR m6', 'Logo m12', 'GRR m12', 'NRR m12'],
   rows=table_rows('derived_a2_cohorts', [('label', 'text'), ('n', 'count'), ('start_mrr_post', 'usd'), ('logo_m3', 'ratio'), ('nrr_m3', 'ratio'), ('logo_m6', 'ratio'), ('nrr_m6', 'ratio'), ('logo_m12', 'ratio'), ('grr_m12', 'ratio'), ('nrr_m12', 'ratio')]),
   align='lrrrrrrrrr',
@@ -153,7 +153,7 @@
 
 {{ s.table_slide(
   appendix='A3',
-  headline='Ad platforms report ' ~ m.ch_meta_trials_platform_vs_internal ~ ' the trials we actually see, so CAC uses our own data only',
+  headline='Platform-reported trials are ' ~ m.ch_meta_trials_platform_vs_internal ~ ' what we actually see, so CAC uses our own data only',
   columns=['Platform', 'Platform-reported trials', 'Trials in our data', 'Ratio', 'Spend'],
   rows=table_rows('derived_a3_attribution', [('platform', 'text'), ('platform_reported_trials', 'count'), ('internal_trials', 'count'), ('ratio', 'x'), ('platform_spend', 'usd')]),
   align='lrrrr',
@@ -166,10 +166,10 @@
   appendix='A4',
   headline='Support load grows faster than the customer base; a quarter of tickets are about what the agent did',
   columns=['Quarter', 'Tickets', 'Avg paying customers', 'Tickets per customer', 'About agent behaviour', 'Median first response, hours', 'CSAT (of 5)'],
-  rows=table_rows('derived_a4_support', [('label', 'text'), ('tickets', 'count'), ('avg_paying', 'count'), ('tickets_per_paying', 'x', 1), ('share_agent_related', 'ratio'), ('median_first_response_h', 'hours', 1), ('csat_mean', 'score', 2)]),
+  rows=table_rows('derived_a4_support', [('label', 'text'), ('tickets', 'count'), ('avg_paying', 'count'), ('tickets_per_paying', 'count', 1), ('share_agent_related', 'ratio'), ('median_first_response_h', 'hours', 1), ('csat_mean', 'score', 2)]),
   align='lrrrrrr',
   source='support_tickets.csv; agent behaviour = "Agent did something unexpected" + "Autopilot approval settings"',
-  note='Per action, Autopilot users undo less than manual users (slide 3); they generate more tickets because the agent does more.') }}
+  note='Q4 is October only, so per-customer tickets are one month, not a quarter.') }}
 
 {{ s.table_slide(
   appendix='A5',

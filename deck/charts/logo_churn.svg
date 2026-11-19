@@ -1,0 +1,201 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 421.2 280.8" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMinYMin meet" class="np-chart" role="img">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="logo_churn3-figure_1">
+  <g id="logo_churn3-patch_1">
+   <path d="M 0 280.8 
+L 421.2 280.8 
+L 421.2 0 
+L 0 0 
+L 0 280.8 
+z
+" style="fill: none"/>
+  </g>
+  <g id="logo_churn3-axes_1">
+   <g id="logo_churn3-patch_2">
+    <path d="M 27.075313 247.720781 
+L 404.589413 247.720781 
+L 404.589413 22.5675 
+L 27.075313 22.5675 
+L 27.075313 247.720781 
+z
+" style="fill: none"/>
+   </g>
+   <g id="logo_churn3-matplotlib.axis_1">
+    <g id="logo_churn3-xtick_1">
+     <g id="logo_churn3-line2d_1"/>
+     <g id="logo_churn3-text_1">
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(29.029205 263.408281)">Feb</text>
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(25.540143 275.507891)">2025</text>
+     </g>
+    </g>
+    <g id="logo_churn3-xtick_2">
+     <g id="logo_churn3-line2d_2"/>
+     <g id="logo_churn3-text_2">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="73.374212" y="263.408281" transform="rotate(-0 73.374212 263.408281)">Apr</text>
+     </g>
+    </g>
+    <g id="logo_churn3-xtick_3">
+     <g id="logo_churn3-line2d_3"/>
+     <g id="logo_churn3-text_3">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="126.796018" y="263.408281" transform="rotate(-0 126.796018 263.408281)">Jul</text>
+     </g>
+    </g>
+    <g id="logo_churn3-xtick_4">
+     <g id="logo_churn3-line2d_4"/>
+     <g id="logo_churn3-text_4">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="180.217825" y="263.408281" transform="rotate(-0 180.217825 263.408281)">Oct</text>
+     </g>
+    </g>
+    <g id="logo_churn3-xtick_5">
+     <g id="logo_churn3-line2d_5"/>
+     <g id="logo_churn3-text_5">
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(225.024007 263.408281)">Jan</text>
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(221.285725 275.507891)">2026</text>
+     </g>
+    </g>
+    <g id="logo_churn3-xtick_6">
+     <g id="logo_churn3-line2d_6"/>
+     <g id="logo_churn3-text_6">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="287.061438" y="263.408281" transform="rotate(-0 287.061438 263.408281)">Apr</text>
+     </g>
+    </g>
+    <g id="logo_churn3-xtick_7">
+     <g id="logo_churn3-line2d_7"/>
+     <g id="logo_churn3-text_7">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="340.483245" y="263.408281" transform="rotate(-0 340.483245 263.408281)">Jul</text>
+     </g>
+    </g>
+    <g id="logo_churn3-xtick_8">
+     <g id="logo_churn3-line2d_8"/>
+     <g id="logo_churn3-text_8">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="393.905052" y="263.408281" transform="rotate(-0 393.905052 263.408281)">Oct</text>
+     </g>
+    </g>
+   </g>
+   <g id="logo_churn3-matplotlib.axis_2">
+    <g id="logo_churn3-ytick_1">
+     <g id="logo_churn3-line2d_9">
+      <path d="M 27.075313 247.720781 
+L 404.589413 247.720781 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="logo_churn3-line2d_10"/>
+     <g id="logo_churn3-text_9">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="23.075313" y="252.564531" transform="rotate(-0 23.075313 252.564531)">0%</text>
+     </g>
+    </g>
+    <g id="logo_churn3-ytick_2">
+     <g id="logo_churn3-line2d_11">
+      <path d="M 27.075313 202.690125 
+L 404.589413 202.690125 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="logo_churn3-line2d_12"/>
+     <g id="logo_churn3-text_10">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="23.075313" y="207.533875" transform="rotate(-0 23.075313 207.533875)">2%</text>
+     </g>
+    </g>
+    <g id="logo_churn3-ytick_3">
+     <g id="logo_churn3-line2d_13">
+      <path d="M 27.075313 157.659469 
+L 404.589413 157.659469 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="logo_churn3-line2d_14"/>
+     <g id="logo_churn3-text_11">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="23.075313" y="162.503219" transform="rotate(-0 23.075313 162.503219)">4%</text>
+     </g>
+    </g>
+    <g id="logo_churn3-ytick_4">
+     <g id="logo_churn3-line2d_15">
+      <path d="M 27.075313 112.628813 
+L 404.589413 112.628813 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="logo_churn3-line2d_16"/>
+     <g id="logo_churn3-text_12">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="23.075313" y="117.472563" transform="rotate(-0 23.075313 117.472563)">6%</text>
+     </g>
+    </g>
+    <g id="logo_churn3-ytick_5">
+     <g id="logo_churn3-line2d_17">
+      <path d="M 27.075313 67.598156 
+L 404.589413 67.598156 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="logo_churn3-line2d_18"/>
+     <g id="logo_churn3-text_13">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="23.075313" y="72.441906" transform="rotate(-0 23.075313 72.441906)">8%</text>
+     </g>
+    </g>
+    <g id="logo_churn3-ytick_6">
+     <g id="logo_churn3-line2d_19">
+      <path d="M 27.075313 22.5675 
+L 404.589413 22.5675 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="logo_churn3-line2d_20"/>
+     <g id="logo_churn3-text_14">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="23.075313" y="27.41125" transform="rotate(-0 23.075313 27.41125)">10%</text>
+     </g>
+    </g>
+   </g>
+   <g id="logo_churn3-patch_3">
+    <path d="M 27.075312 247.720781 
+L 404.589413 247.720781 
+" style="fill: none; stroke: #a2a6ab; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="logo_churn3-line2d_21">
+    <path d="M 73.374212 119.892529 
+L 91.181481 104.97853 
+L 108.988749 167.227481 
+L 126.796018 152.250179 
+L 144.603287 147.264268 
+L 162.410556 144.195391 
+L 180.217825 128.191849 
+L 198.025094 144.617172 
+L 215.832363 123.537749 
+L 233.639632 112.31989 
+L 251.446901 117.748934 
+L 269.254169 114.444153 
+L 287.061438 124.170536 
+L 304.868707 134.243499 
+L 322.675976 161.271326 
+L 340.483245 183.817861 
+L 358.290514 175.645806 
+L 376.097783 169.529432 
+L 393.905052 167.512045 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke: #0b7a5e; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="logo_churn3-text_15">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter'; text-anchor: start; fill: #0b7a5e" x="399.905052" y="171.51351" transform="rotate(-0 399.905052 171.51351)">4%</text>
+   </g>
+   <g id="logo_churn3-line2d_22">
+    <path d="M 295.965073 247.720781 
+L 295.965073 22.5675 
+" clip-path="url(#logo_churn3-pd5f7978d54)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #16202c"/>
+   </g>
+   <g id="logo_churn3-text_16">
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #737b84" x="27.075313" y="12.5675" transform="rotate(-0 27.075313 12.5675)">Paying customers lost per month, 3-month average</text>
+   </g>
+   <g id="logo_churn3-text_17">
+    <g id="logo_churn3-patch_4">
+     <path d="M 296.601945 40.670175 
+L 341.822258 40.670175 
+L 341.822258 25.570566 
+L 296.601945 25.570566 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #16202c" x="298.101945" y="36.758066" transform="rotate(-0 298.101945 36.758066)">Autopilot</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="logo_churn3-pd5f7978d54">
+   <rect x="27.075313" y="22.5675" width="377.514101" height="225.153281"/>
+  </clipPath>
+ </defs>
+</svg>

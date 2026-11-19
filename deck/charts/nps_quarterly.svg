@@ -1,0 +1,281 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 421.2 280.8" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMinYMin meet" class="np-chart" role="img">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="nps_quarterly4-figure_1">
+  <g id="nps_quarterly4-patch_1">
+   <path d="M 0 280.8 
+L 421.2 280.8 
+L 421.2 0 
+L 0 0 
+L 0 280.8 
+z
+" style="fill: none"/>
+  </g>
+  <g id="nps_quarterly4-axes_1">
+   <g id="nps_quarterly4-patch_2">
+    <path d="M 21.856563 250.140703 
+L 418.32 250.140703 
+L 418.32 22.5675 
+L 21.856563 22.5675 
+L 21.856563 250.140703 
+z
+" style="fill: none"/>
+   </g>
+   <g id="nps_quarterly4-matplotlib.axis_1">
+    <g id="nps_quarterly4-xtick_1">
+     <g id="nps_quarterly4-line2d_1"/>
+     <g id="nps_quarterly4-text_1">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(42.589421 264.859453)">25 Q1</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(43.416296 275.749102)">n=22</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-xtick_2">
+     <g id="nps_quarterly4-line2d_2"/>
+     <g id="nps_quarterly4-text_2">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(88.974743 264.859453)">25 Q2</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(91.629743 275.749102)">n=21</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-xtick_3">
+     <g id="nps_quarterly4-line2d_3"/>
+     <g id="nps_quarterly4-text_3">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(136.238971 264.859453)">25 Q3</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(137.968658 275.749102)">n=26</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-xtick_4">
+     <g id="nps_quarterly4-line2d_4"/>
+     <g id="nps_quarterly4-text_4">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(183.411089 264.859453)">25 Q4</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(185.349605 275.749102)">n=47</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-xtick_5">
+     <g id="nps_quarterly4-line2d_5"/>
+     <g id="nps_quarterly4-text_5">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(231.66602 264.859453)">26 Q1</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(232.405005 275.749102)">n=46</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-xtick_6">
+     <g id="nps_quarterly4-line2d_6"/>
+     <g id="nps_quarterly4-text_6">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(278.051342 264.859453)">26 Q2</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(279.866811 275.749102)">n=62</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-xtick_7">
+     <g id="nps_quarterly4-line2d_7"/>
+     <g id="nps_quarterly4-text_7">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(325.31557 264.859453)">26 Q3</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(327.528304 275.749102)">n=75</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-xtick_8">
+     <g id="nps_quarterly4-line2d_8"/>
+     <g id="nps_quarterly4-text_8">
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(372.487688 264.859453)">26 Q4</text>
+      <text style="font-size: 9px; font-family: 'Inter'; fill: #45505c" transform="translate(371.574329 275.749102)">n=32*</text>
+     </g>
+    </g>
+   </g>
+   <g id="nps_quarterly4-matplotlib.axis_2">
+    <g id="nps_quarterly4-ytick_1">
+     <g id="nps_quarterly4-line2d_9">
+      <path d="M 21.856563 230.578537 
+L 418.32 230.578537 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_10"/>
+     <g id="nps_quarterly4-text_9">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="235.422287" transform="rotate(-0 17.856563 235.422287)">-10</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-ytick_2">
+     <g id="nps_quarterly4-line2d_11">
+      <path d="M 21.856563 201.887359 
+L 418.32 201.887359 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_12"/>
+     <g id="nps_quarterly4-text_10">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="206.731109" transform="rotate(-0 17.856563 206.731109)">0</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-ytick_3">
+     <g id="nps_quarterly4-line2d_13">
+      <path d="M 21.856563 173.196182 
+L 418.32 173.196182 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_14"/>
+     <g id="nps_quarterly4-text_11">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="178.039932" transform="rotate(-0 17.856563 178.039932)">10</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-ytick_4">
+     <g id="nps_quarterly4-line2d_15">
+      <path d="M 21.856563 144.505004 
+L 418.32 144.505004 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_16"/>
+     <g id="nps_quarterly4-text_12">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="149.348754" transform="rotate(-0 17.856563 149.348754)">20</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-ytick_5">
+     <g id="nps_quarterly4-line2d_17">
+      <path d="M 21.856563 115.813827 
+L 418.32 115.813827 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_18"/>
+     <g id="nps_quarterly4-text_13">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="120.657577" transform="rotate(-0 17.856563 120.657577)">30</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-ytick_6">
+     <g id="nps_quarterly4-line2d_19">
+      <path d="M 21.856563 87.122649 
+L 418.32 87.122649 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_20"/>
+     <g id="nps_quarterly4-text_14">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="91.966399" transform="rotate(-0 17.856563 91.966399)">40</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-ytick_7">
+     <g id="nps_quarterly4-line2d_21">
+      <path d="M 21.856563 58.431472 
+L 418.32 58.431472 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_22"/>
+     <g id="nps_quarterly4-text_15">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="63.275222" transform="rotate(-0 17.856563 63.275222)">50</text>
+     </g>
+    </g>
+    <g id="nps_quarterly4-ytick_8">
+     <g id="nps_quarterly4-line2d_23">
+      <path d="M 21.856563 29.740294 
+L 418.32 29.740294 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="nps_quarterly4-line2d_24"/>
+     <g id="nps_quarterly4-text_16">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="17.856563" y="34.584044" transform="rotate(-0 17.856563 34.584044)">60</text>
+     </g>
+    </g>
+   </g>
+   <g id="nps_quarterly4-patch_3">
+    <path d="M 39.877628 201.887359 
+L 69.203246 201.887359 
+L 69.203246 227.970248 
+L 39.877628 227.970248 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="nps_quarterly4-patch_4">
+    <path d="M 87.177012 201.887359 
+L 116.50263 201.887359 
+L 116.50263 133.575032 
+L 87.177012 133.575032 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="nps_quarterly4-patch_5">
+    <path d="M 134.476396 201.887359 
+L 163.802014 201.887359 
+L 163.802014 190.852291 
+L 134.476396 190.852291 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="nps_quarterly4-patch_6">
+    <path d="M 181.77578 201.887359 
+L 211.101398 201.887359 
+L 211.101398 128.633289 
+L 181.77578 128.633289 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="nps_quarterly4-patch_7">
+    <path d="M 229.075164 201.887359 
+L 258.400782 201.887359 
+L 258.400782 158.226872 
+L 229.075164 158.226872 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="nps_quarterly4-patch_8">
+    <path d="M 276.374548 201.887359 
+L 305.700166 201.887359 
+L 305.700166 72.3143 
+L 276.374548 72.3143 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="nps_quarterly4-patch_9">
+    <path d="M 323.673932 201.887359 
+L 352.999551 201.887359 
+L 352.999551 90.94814 
+L 323.673932 90.94814 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="nps_quarterly4-patch_10">
+    <path d="M 370.973317 201.887359 
+L 400.298935 201.887359 
+L 400.298935 58.431472 
+L 370.973317 58.431472 
+z
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="nps_quarterly4-line2d_25">
+    <path d="M 21.856563 201.887359 
+L 418.32 201.887359 
+" clip-path="url(#nps_quarterly4-pfd9cf0116c)" style="fill: none; stroke: #a2a6ab; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="nps_quarterly4-patch_11">
+    <path d="M 21.856563 250.140703 
+L 418.32 250.140703 
+" style="fill: none; stroke: #a2a6ab; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="nps_quarterly4-text_17">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #a2a6ab" x="54.540437" y="196.47525" transform="rotate(-0 54.540437 196.47525)">-9</text>
+   </g>
+   <g id="nps_quarterly4-text_18">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #a2a6ab" x="101.839821" y="128.162923" transform="rotate(-0 101.839821 128.162923)">24</text>
+   </g>
+   <g id="nps_quarterly4-text_19">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #a2a6ab" x="149.139205" y="185.440182" transform="rotate(-0 149.139205 185.440182)">4</text>
+   </g>
+   <g id="nps_quarterly4-text_20">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #a2a6ab" x="196.438589" y="123.22118" transform="rotate(-0 196.438589 123.22118)">26</text>
+   </g>
+   <g id="nps_quarterly4-text_21">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #a2a6ab" x="243.737973" y="152.814762" transform="rotate(-0 243.737973 152.814762)">15</text>
+   </g>
+   <g id="nps_quarterly4-text_22">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #0b7a5e" x="291.037357" y="66.90219" transform="rotate(-0 291.037357 66.90219)">45</text>
+   </g>
+   <g id="nps_quarterly4-text_23">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #0b7a5e" x="338.336741" y="85.53603" transform="rotate(-0 338.336741 85.53603)">39</text>
+   </g>
+   <g id="nps_quarterly4-text_24">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #0b7a5e" x="385.636126" y="53.019362" transform="rotate(-0 385.636126 53.019362)">50</text>
+   </g>
+   <g id="nps_quarterly4-text_25">
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #737b84" x="21.856563" y="12.5675" transform="rotate(-0 21.856563 12.5675)">NPS by quarter (promoters − detractors, points); n = responses</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="nps_quarterly4-pfd9cf0116c">
+   <rect x="21.856563" y="22.5675" width="396.463437" height="227.573203"/>
+  </clipPath>
+ </defs>
+</svg>

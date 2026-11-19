@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Note to Alex</title><style>
+@font-face { font-family: "Inter"; src: url("../deck/fonts/Inter-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../deck/fonts/Inter-SemiBold.ttf"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../deck/fonts/Inter-Bold.ttf"); font-weight: 700; }
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+html, body { background: #ffffff; }
+body { font-family: "Inter", sans-serif; font-feature-settings: "calt" 0; color: #16202c; font-size: 8.9pt; line-height: 1.36; margin: 0; padding: 0.5in 0.6in; }
+h1 { font-size: 13.5pt; font-weight: 700; margin: 0 0 0.05in; letter-spacing: -0.01em; }
+.meta { color: #737b84; font-size: 8pt; margin-bottom: 0.08in; }
+h2 { font-size: 9.6pt; font-weight: 700; color: #0b7a5e; margin: 0.1in 0 0.03in; text-transform: uppercase; letter-spacing: 0.04em; }
+p { margin: 0 0 0.05in; }
+ul, ol { margin: 0 0 0.04in; padding-left: 0.17in; }
+li { margin-bottom: 0.025in; }
+strong { font-weight: 600; }
+</style></head><body><h1>Alex — the deck, what I changed, and what to know before the first meeting</h1><div class='meta'>From: Zakhar, Chief of Staff · To: Alex · Data cut-off 31 Oct 2026 · Deck, source and calc table: github.com/d3faultnpc/northpine-series-a</div>
+<p><strong>TL;DR.</strong> Lead with Autopilot. Since May, MRR is up 2.5x and Autopilot plans brought 68% of the new revenue. Monthly logo churn also fell from 5.8% to 3.2%. Pitch <strong>$4.4M ARR and 299 paying customers</strong>. Three things not to say: "$6.0M ARR / 344 customers", "no competitors", "Meta is our best channel".</p>
+<h2>What I changed from your notes, and why</h2>
+<ul>
+<li><strong>ARR $6.0M → $4.4M.</strong> The KPI-sheet "MRR" is Stripe cash collected: it includes annual prepay, one-time setup fees and usage tiers. Diligence rebuilds ARR from subscriptions in the first hour, so the gap would land on us. Appendix A1 bridges the two to the dollar. The customer count drops to paying customers only, because the 344 includes 37 trials.</li>
+<li><strong>12 slides instead of 25–30.</strong> The 14 features become three jobs plus Autopilot. I cut the TAM slide, since all of global e-commerce is not a market a partner will accept. The data room has no sourced input for a bottom-up SAM, so I left market size out rather than invent one.</li>
+<li><strong>Added competition and gross margin.</strong> A partner finds Rally AI ($22M raised) in five minutes, and asks for margin in the first call. Shown openly, the summer dip is a solved problem, not a surprise.</li>
+<li><strong>Brightline is disclosed, not used as the lead logo.</strong> It is 16% of MRR and 24% of the growth since April, so the deck frames agencies as a channel and states the concentration. The Little Tea House quote is gone because they churned in August (failed payment).</li>
+<li><strong>Channels: data instead of claims.</strong> I removed the March TikTok chart: 1,055 signups became 33 trials and no paying customers. Meta's own trial count is platform-modelled; our own count is 153, and Google overstates the same way. The cheapest channel is the App Store ($184 CAC) against $2,027 for Meta. Use of funds is now three milestones instead of 50/30/20 with a "buffer".</li>
+</ul>
+<h2>Know before the meeting (highest diligence risk first)</h2>
+<ol>
+<li><strong>Runway is 8 months.</strong> Cash is $2.0M, net burn $250k a month (3-month average). To keep 6 months of cash in hand, the round has to close by <strong>Dec 2026</strong>.</li>
+<li><strong>Concentration.</strong> Brightline is 16% of MRR across 41 brands, so expect "what if they leave". Without Brightline, growth is still 2.1x.</li>
+<li><strong>Margin.</strong> Inference pushed GM to 65% in Jun 2026. Adding a second inference vendor in August cut inference cost per 1k agent actions from $305 to $111, and GM is back at 82%.</li>
+<li><strong>Autopilot growth came from new customers only.</strong> No customer has ever changed plan. 124 paying customers are still on legacy prices, and moving them to same-tier new prices is worth $23k MRR. Present that as a milestone, not as something we do not know.</li>
+<li><strong>Support load is growing faster than the base.</strong> Tickets per customer are up since Q2, and 27% of Q3 tickets are about agent behaviour; CS is 10 of 31 people. Autopilot users undo only 0.3% of agent actions; the tickets come from volume, since Autopilot runs about three times the actions per customer. Do not claim they undo less than manual users: that holds only without Brightline.</li>
+<li><strong>Data hygiene.</strong> KPI cash and burn match the bank within $489. KPI MRR, ARR and customers do not match Stripe. March's 273 customers counts the trial wave. Two records are dated after the cut-off, including a dispute dated 5 December, and three card disputes were lost as fraud in Sep–Oct.</li>
+</ol>
+<h2>Assumptions</h2>
+<p>ARR is subscription MRR after discounts, ×12. It excludes one-time fees and usage tiers ($732k run-rate, shown separately). Paying means billed above $0 in October. Cut-off is 31 Oct 2026. Gross margin counts usage revenue against the same COGS. Refunds and disputes are cash events and do not change MRR. CAC uses Stripe channel tags and bank spend, never platform attribution.</p>
+<h2>Likely partner questions</h2>
+<p><strong>Why not $6.0M?</strong> That figure is cash ×12; A1 walks it to $4.4M. <strong>If Brightline leaves?</strong> Growth ex-Brightline is still 2.1x. <strong>Rally AI?</strong> They buy media; we run ads, SEO and email as one loop. <strong>Is it just the price rise?</strong> No: 62% of new MRR is more customers, not higher prices. <strong>If the round slips?</strong> Cash lasts to Jul 2027.</p>
+<p><strong>Next questions for us:</strong> why legacy customers never migrated; Brightline contract term; inference cost if agent actions double again; an outcome metric (customer ROAS) we can show.</p></body></html>

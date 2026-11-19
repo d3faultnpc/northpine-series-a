@@ -1,0 +1,205 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 626.4 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMinYMin meet" class="np-chart" role="img">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="price_ladder0-figure_1">
+  <g id="price_ladder0-patch_1">
+   <path d="M 0 309.6 
+L 626.4 309.6 
+L 626.4 0 
+L 0 0 
+L 0 309.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="price_ladder0-axes_1">
+   <g id="price_ladder0-patch_2">
+    <path d="M 172.3825 288.620391 
+L 619.830101 288.620391 
+L 619.830101 22.5675 
+L 172.3825 22.5675 
+L 172.3825 288.620391 
+z
+" style="fill: none"/>
+   </g>
+   <g id="price_ladder0-matplotlib.axis_1">
+    <g id="price_ladder0-xtick_1">
+     <g id="price_ladder0-line2d_1">
+      <path d="M 172.3825 288.620391 
+L 172.3825 22.5675 
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="price_ladder0-line2d_2"/>
+     <g id="price_ladder0-text_1">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="172.3825" y="304.307891" transform="rotate(-0 172.3825 304.307891)">$0</text>
+     </g>
+    </g>
+    <g id="price_ladder0-xtick_2">
+     <g id="price_ladder0-line2d_3">
+      <path d="M 245.734566 288.620391 
+L 245.734566 22.5675 
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="price_ladder0-line2d_4"/>
+     <g id="price_ladder0-text_2">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="245.734566" y="304.307891" transform="rotate(-0 245.734566 304.307891)">$2k</text>
+     </g>
+    </g>
+    <g id="price_ladder0-xtick_3">
+     <g id="price_ladder0-line2d_5">
+      <path d="M 319.086632 288.620391 
+L 319.086632 22.5675 
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="price_ladder0-line2d_6"/>
+     <g id="price_ladder0-text_3">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="319.086632" y="304.307891" transform="rotate(-0 319.086632 304.307891)">$4k</text>
+     </g>
+    </g>
+    <g id="price_ladder0-xtick_4">
+     <g id="price_ladder0-line2d_7">
+      <path d="M 392.438697 288.620391 
+L 392.438697 22.5675 
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="price_ladder0-line2d_8"/>
+     <g id="price_ladder0-text_4">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="392.438697" y="304.307891" transform="rotate(-0 392.438697 304.307891)">$6k</text>
+     </g>
+    </g>
+    <g id="price_ladder0-xtick_5">
+     <g id="price_ladder0-line2d_9">
+      <path d="M 465.790763 288.620391 
+L 465.790763 22.5675 
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="price_ladder0-line2d_10"/>
+     <g id="price_ladder0-text_5">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="465.790763" y="304.307891" transform="rotate(-0 465.790763 304.307891)">$8k</text>
+     </g>
+    </g>
+    <g id="price_ladder0-xtick_6">
+     <g id="price_ladder0-line2d_11">
+      <path d="M 539.142829 288.620391 
+L 539.142829 22.5675 
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="price_ladder0-line2d_12"/>
+     <g id="price_ladder0-text_6">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="539.142829" y="304.307891" transform="rotate(-0 539.142829 304.307891)">$10k</text>
+     </g>
+    </g>
+    <g id="price_ladder0-xtick_7">
+     <g id="price_ladder0-line2d_13">
+      <path d="M 612.494895 288.620391 
+L 612.494895 22.5675 
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="price_ladder0-line2d_14"/>
+     <g id="price_ladder0-text_7">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="612.494895" y="304.307891" transform="rotate(-0 612.494895 304.307891)">$12k</text>
+     </g>
+    </g>
+   </g>
+   <g id="price_ladder0-matplotlib.axis_2">
+    <g id="price_ladder0-ytick_1">
+     <g id="price_ladder0-line2d_15"/>
+     <g id="price_ladder0-text_8">
+      <text style="font-size: 12px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="168.3825" y="57.749475" transform="rotate(-0 168.3825 57.749475)">In-house growth hire</text>
+     </g>
+    </g>
+    <g id="price_ladder0-ytick_2">
+     <g id="price_ladder0-line2d_16"/>
+     <g id="price_ladder0-text_9">
+      <text style="font-size: 12px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="168.3825" y="126.854122" transform="rotate(-0 168.3825 126.854122)">Growth agency (Growlane)</text>
+     </g>
+    </g>
+    <g id="price_ladder0-ytick_3">
+     <g id="price_ladder0-line2d_17"/>
+     <g id="price_ladder0-text_10">
+      <text style="font-size: 12px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="168.3825" y="195.958769" transform="rotate(-0 168.3825 195.958769)">Rally AI (ads only)</text>
+     </g>
+    </g>
+    <g id="price_ladder0-ytick_4">
+     <g id="price_ladder0-line2d_18"/>
+     <g id="price_ladder0-text_11">
+      <text style="font-size: 12px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="168.3825" y="265.063416" transform="rotate(-0 168.3825 265.063416)">Northpine, average customer</text>
+     </g>
+    </g>
+   </g>
+   <g id="price_ladder0-patch_3">
+    <path d="M 172.3825 69.213137 
+L 429.11473 69.213137 
+L 429.11473 34.660813 
+L 172.3825 34.660813 
+z
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: #dcdee0"/>
+   </g>
+   <g id="price_ladder0-patch_4">
+    <path d="M 172.3825 207.42243 
+L 190.720516 207.42243 
+L 190.720516 172.870107 
+L 172.3825 172.870107 
+z
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: #dcdee0"/>
+   </g>
+   <g id="price_ladder0-patch_5">
+    <path d="M 429.11473 69.213137 
+L 539.142829 69.213137 
+L 539.142829 34.660813 
+L 429.11473 34.660813 
+z
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="price_ladder0-patch_6">
+    <path d="M 172.3825 138.317784 
+L 319.086632 138.317784 
+L 319.086632 103.76546 
+L 172.3825 103.76546 
+z
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="price_ladder0-patch_7">
+    <path d="M 190.720516 207.42243 
+L 282.410599 207.42243 
+L 282.410599 172.870107 
+L 190.720516 172.870107 
+z
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="price_ladder0-patch_8">
+    <path d="M 172.3825 276.527077 
+L 210.734619 276.527077 
+L 210.734619 241.974754 
+L 172.3825 241.974754 
+z
+" clip-path="url(#price_ladder0-p6a3a23249e)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="price_ladder0-patch_9">
+    <path d="M 172.3825 288.620391 
+L 619.830101 288.620391 
+" style="fill: none; stroke: #a2a6ab; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="price_ladder0-text_12">
+    <text style="font-weight: 600; font-size: 12px; font-family: 'Inter'; text-anchor: start; fill: #16202c" x="547.142829" y="56.302209" transform="rotate(-0 547.142829 56.302209)">$7k–$10k</text>
+   </g>
+   <g id="price_ladder0-text_13">
+    <text style="font-weight: 600; font-size: 12px; font-family: 'Inter'; text-anchor: start; fill: #16202c" x="327.086632" y="125.406856" transform="rotate(-0 327.086632 125.406856)">$4k+</text>
+   </g>
+   <g id="price_ladder0-text_14">
+    <text style="font-weight: 600; font-size: 12px; font-family: 'Inter'; text-anchor: start; fill: #16202c" x="290.410599" y="194.511503" transform="rotate(-0 290.410599 194.511503)">$500–$3,000</text>
+   </g>
+   <g id="price_ladder0-text_15">
+    <text style="font-weight: 600; font-size: 12px; font-family: 'Inter'; text-anchor: start; fill: #0b7a5e" x="218.734619" y="263.61615" transform="rotate(-0 218.734619 263.61615)">$1,046</text>
+   </g>
+   <g id="price_ladder0-text_16">
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #737b84" x="172.3825" y="12.5675" transform="rotate(-0 172.3825 12.5675)">Monthly cost to the brand, $ per month</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="price_ladder0-p6a3a23249e">
+   <rect x="172.3825" y="22.5675" width="447.447601" height="266.052891"/>
+  </clipPath>
+ </defs>
+</svg>

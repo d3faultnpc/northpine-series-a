@@ -12,3 +12,5 @@ data/raw/*
 # build scratch
 deck/_*.html
 out/test.pdf
+out/deck_demo*
+out/*.png

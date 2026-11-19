@@ -2,7 +2,11 @@
 
 Chief of Staff take-home. Northpine is a fictional AI growth agent for Shopify brands raising an $8M Series A.
 
-**Deliverables** (in `out/` once built): investor deck (PDF), one-page note to the CEO, and a calc table that derives every number in both.
+**Deliverables**
+- [Investor deck (PDF)](out/deck.pdf): 12 slides plus appendix A1–A6
+- [One-page note to the CEO (PDF)](out/memo.pdf)
+- [Calc table](out/calc_table.csv): every number in the deck and memo, with definition, source, filter and formula
+- Supporting files: [data-quality log](calc/data_quality.csv), [checks vs the founder's snapshot](calc/checks.txt), [all metrics](calc/metrics.csv), [monthly series](calc/series/)
 
 ## Reproduce
 
@@ -24,5 +28,5 @@ data/fetch.sh                 # 21 source files -> data/raw (not committed)
 | `memo/` | CEO note template |
 | `out/` | built PDFs and the calc table |
 
-Every number in the deck and memo is rendered from `calc/metrics.csv` by id; templates contain no literal numbers.
+Every number in the deck and memo is rendered from `calc/metrics.csv` by id; the build fails on a missing or NA id.
 Cut-off date: 2026-10-31.

@@ -1,0 +1,220 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 626.4 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMinYMin meet" class="np-chart" role="img">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="gross_margin5-figure_1">
+  <g id="gross_margin5-patch_1">
+   <path d="M 0 309.6 
+L 626.4 309.6 
+L 626.4 0 
+L 0 0 
+L 0 309.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="gross_margin5-axes_1">
+   <g id="gross_margin5-patch_2">
+    <path d="M 33.384687 276.520781 
+L 583.09024 276.520781 
+L 583.09024 22.5675 
+L 33.384687 22.5675 
+L 33.384687 276.520781 
+z
+" style="fill: none"/>
+   </g>
+   <g id="gross_margin5-matplotlib.axis_1">
+    <g id="gross_margin5-xtick_1">
+     <g id="gross_margin5-line2d_1"/>
+     <g id="gross_margin5-text_1">
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(39.625969 292.208281)">Jan</text>
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(36.022063 304.307891)">2025</text>
+     </g>
+    </g>
+    <g id="gross_margin5-xtick_2">
+     <g id="gross_margin5-line2d_2"/>
+     <g id="gross_margin5-text_2">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="122.526128" y="292.208281" transform="rotate(-0 122.526128 292.208281)">Apr</text>
+     </g>
+    </g>
+    <g id="gross_margin5-xtick_3">
+     <g id="gross_margin5-line2d_3"/>
+     <g id="gross_margin5-text_3">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="196.810662" y="292.208281" transform="rotate(-0 196.810662 292.208281)">Jul</text>
+     </g>
+    </g>
+    <g id="gross_margin5-xtick_4">
+     <g id="gross_margin5-line2d_4"/>
+     <g id="gross_margin5-text_4">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="271.095197" y="292.208281" transform="rotate(-0 271.095197 292.208281)">Oct</text>
+     </g>
+    </g>
+    <g id="gross_margin5-xtick_5">
+     <g id="gross_margin5-line2d_5"/>
+     <g id="gross_margin5-text_5">
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(336.764106 292.208281)">Jan</text>
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(333.025824 304.307891)">2026</text>
+     </g>
+    </g>
+    <g id="gross_margin5-xtick_6">
+     <g id="gross_margin5-line2d_6"/>
+     <g id="gross_margin5-text_6">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="419.664265" y="292.208281" transform="rotate(-0 419.664265 292.208281)">Apr</text>
+     </g>
+    </g>
+    <g id="gross_margin5-xtick_7">
+     <g id="gross_margin5-line2d_7"/>
+     <g id="gross_margin5-text_7">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="493.948799" y="292.208281" transform="rotate(-0 493.948799 292.208281)">Jul</text>
+     </g>
+    </g>
+    <g id="gross_margin5-xtick_8">
+     <g id="gross_margin5-line2d_8"/>
+     <g id="gross_margin5-text_8">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="568.233333" y="292.208281" transform="rotate(-0 568.233333 292.208281)">Oct</text>
+     </g>
+    </g>
+   </g>
+   <g id="gross_margin5-matplotlib.axis_2">
+    <g id="gross_margin5-ytick_1">
+     <g id="gross_margin5-line2d_9">
+      <path d="M 33.384687 276.520781 
+L 583.09024 276.520781 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="gross_margin5-line2d_10"/>
+     <g id="gross_margin5-text_9">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="29.384687" y="281.364531" transform="rotate(-0 29.384687 281.364531)">50%</text>
+     </g>
+    </g>
+    <g id="gross_margin5-ytick_2">
+     <g id="gross_margin5-line2d_11">
+      <path d="M 33.384687 225.730125 
+L 583.09024 225.730125 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="gross_margin5-line2d_12"/>
+     <g id="gross_margin5-text_10">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="29.384687" y="230.573875" transform="rotate(-0 29.384687 230.573875)">60%</text>
+     </g>
+    </g>
+    <g id="gross_margin5-ytick_3">
+     <g id="gross_margin5-line2d_13">
+      <path d="M 33.384687 174.939469 
+L 583.09024 174.939469 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="gross_margin5-line2d_14"/>
+     <g id="gross_margin5-text_11">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="29.384687" y="179.783219" transform="rotate(-0 29.384687 179.783219)">70%</text>
+     </g>
+    </g>
+    <g id="gross_margin5-ytick_4">
+     <g id="gross_margin5-line2d_15">
+      <path d="M 33.384687 124.148812 
+L 583.09024 124.148812 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="gross_margin5-line2d_16"/>
+     <g id="gross_margin5-text_12">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="29.384687" y="128.992562" transform="rotate(-0 29.384687 128.992562)">80%</text>
+     </g>
+    </g>
+    <g id="gross_margin5-ytick_5">
+     <g id="gross_margin5-line2d_17">
+      <path d="M 33.384687 73.358156 
+L 583.09024 73.358156 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="gross_margin5-line2d_18"/>
+     <g id="gross_margin5-text_13">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="29.384687" y="78.201906" transform="rotate(-0 29.384687 78.201906)">90%</text>
+     </g>
+    </g>
+    <g id="gross_margin5-ytick_6">
+     <g id="gross_margin5-line2d_19">
+      <path d="M 33.384687 22.5675 
+L 583.09024 22.5675 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="gross_margin5-line2d_20"/>
+     <g id="gross_margin5-text_14">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="29.384687" y="27.41125" transform="rotate(-0 29.384687 27.41125)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="gross_margin5-patch_3">
+    <path d="M 33.384687 276.520781 
+L 583.09024 276.520781 
+" style="fill: none; stroke: #a2a6ab; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="gross_margin5-line2d_21">
+    <path d="M 48.241594 138.477859 
+L 73.003106 132.929118 
+L 97.764617 130.845763 
+L 122.526128 127.021424 
+L 147.28764 124.49957 
+L 172.049151 121.906137 
+L 196.810662 120.938654 
+L 221.572174 119.644606 
+L 246.333685 116.41661 
+L 271.095197 115.436765 
+L 295.856708 114.931972 
+L 320.618219 114.58503 
+L 345.379731 114.181702 
+L 370.141242 112.653205 
+L 394.902753 113.856661 
+L 419.664265 112.606326 
+L 444.425776 178.950827 
+L 469.187287 199.897906 
+L 493.948799 187.905093 
+L 518.71031 134.472607 
+L 543.471822 118.996835 
+L 568.233333 113.190126 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke: #0b7a5e; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="gross_margin5-text_15">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter'; text-anchor: start; fill: #0b7a5e" x="574.233333" y="117.191591" transform="rotate(-0 574.233333 117.191591)">82%</text>
+   </g>
+   <g id="gross_margin5-line2d_22">
+    <path d="M 432.04502 276.520781 
+L 432.04502 22.5675 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #16202c"/>
+   </g>
+   <g id="gross_margin5-line2d_23">
+    <path d="M 506.329555 276.520781 
+L 506.329555 22.5675 
+" clip-path="url(#gross_margin5-p1410b4ac8f)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #737b84"/>
+   </g>
+   <g id="gross_margin5-text_16">
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #737b84" x="33.384687" y="12.5675" transform="rotate(-0 33.384687 12.5675)">Gross margin, % of recurring revenue (subscription + usage tiers)</text>
+   </g>
+   <g id="gross_margin5-text_17">
+    <g id="gross_margin5-patch_4">
+     <path d="M 433.516402 41.246175 
+L 513.032027 41.246175 
+L 513.032027 26.146566 
+L 433.516402 26.146566 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #16202c" x="435.016402" y="37.334066" transform="rotate(-0 435.016402 37.334066)">Autopilot launch</text>
+   </g>
+   <g id="gross_margin5-text_18">
+    <g id="gross_margin5-patch_5">
+     <path d="M 507.800936 234.250669 
+L 623.999373 234.250669 
+L 623.999373 219.151059 
+L 507.800936 219.151059 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #737b84" x="509.300936" y="230.338559" transform="rotate(-0 509.300936 230.338559)">Inference vendor added</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="gross_margin5-p1410b4ac8f">
+   <rect x="33.384687" y="22.5675" width="549.705552" height="253.953281"/>
+  </clipPath>
+ </defs>
+</svg>

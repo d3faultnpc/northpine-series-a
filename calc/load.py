@@ -139,26 +139,14 @@ def customer_month_mrr() -> pd.DataFrame:
     Columns: customer, month, mrr_pre, mrr_post, usage_post, plan, is_legacy, is_autopilot_plan,
     is_annual, segment, channel, is_brightline.
     Monthly invoices -> their service-period start month. Annual -> /12 for 12 months.
-    Paid invoices only. All refunds (incl. 'duplicate': the data has no second succeeded charge
-    for them, DQ11) and lost disputes reduce that invoice's recurring amount
-    pro-rata (conservative). Records after the cut-off are ignored.
+    Paid invoices only. Refunds and lost disputes do NOT change MRR: they are cash events,
+    logged in calc/data_quality.csv. Records after the cut-off are ignored.
     """
     inv = invoices_parsed()
     inv = inv[inv["is_paid"] & ~inv["is_one_time"] & (inv["created"] <= CUTOFF)].copy()
 
-    # conservative reductions: requested refunds + lost disputes (dated <= cut-off)
-    ref = load("stripe_refunds")
-    ref = ref[ref["created"] <= CUTOFF]  # incl. 'duplicate': no second succeeded charge exists (DQ11)
-    dsp = load("stripe_disputes")
-    dsp = dsp[(dsp["status"] == "lost") & (dsp["created"] <= CUTOFF)]
-    clawback = pd.concat([ref[["invoice", "amount_usd"]], dsp[["invoice", "amount_usd"]]])
-    clawback = clawback.groupby("invoice")["amount_usd"].sum()
-    paid_total = (inv["recurring_post"] + inv["usage_post"]).clip(lower=0.01)
-    cb = inv["id"].map(clawback).fillna(0.0).clip(upper=paid_total)
-    rec_share = inv["recurring_post"] / paid_total
-    inv["recurring_post"] = inv["recurring_post"] - cb * rec_share
-    inv["usage_post"] = inv["usage_post"] - cb * (1 - rec_share)
-    inv["clawback"] = cb
+    # Refunds and lost disputes are cash events: they do not change contracted MRR (DQ log covers them).
+    inv["clawback"] = 0.0
 
     rows = []
     for r in inv.itertuples(index=False):

@@ -1,0 +1,372 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 626.4 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMinYMin meet" class="np-chart" role="img">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="managed_spend2-figure_1">
+  <g id="managed_spend2-patch_1">
+   <path d="M 0 309.6 
+L 626.4 309.6 
+L 626.4 0 
+L 0 0 
+L 0 309.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="managed_spend2-axes_1">
+   <g id="managed_spend2-patch_2">
+    <path d="M 28.787813 276.520781 
+L 622.951315 276.520781 
+L 622.951315 22.5675 
+L 28.787813 22.5675 
+L 28.787813 276.520781 
+z
+" style="fill: none"/>
+   </g>
+   <g id="managed_spend2-matplotlib.axis_1">
+    <g id="managed_spend2-xtick_1">
+     <g id="managed_spend2-line2d_1"/>
+     <g id="managed_spend2-text_1">
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(36.230661 292.208281)">Jan</text>
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(32.626754 304.307891)">2025</text>
+     </g>
+    </g>
+    <g id="managed_spend2-xtick_2">
+     <g id="managed_spend2-line2d_2"/>
+     <g id="managed_spend2-text_2">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="125.138651" y="292.208281" transform="rotate(-0 125.138651 292.208281)">Apr</text>
+     </g>
+    </g>
+    <g id="managed_spend2-xtick_3">
+     <g id="managed_spend2-line2d_3"/>
+     <g id="managed_spend2-text_3">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="205.431016" y="292.208281" transform="rotate(-0 205.431016 292.208281)">Jul</text>
+     </g>
+    </g>
+    <g id="managed_spend2-xtick_4">
+     <g id="managed_spend2-line2d_4"/>
+     <g id="managed_spend2-text_4">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="285.723381" y="292.208281" transform="rotate(-0 285.723381 292.208281)">Oct</text>
+     </g>
+    </g>
+    <g id="managed_spend2-xtick_5">
+     <g id="managed_spend2-line2d_5"/>
+     <g id="managed_spend2-text_5">
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(357.400122 292.208281)">Jan</text>
+      <text style="font-size: 10px; font-family: 'Inter'; fill: #45505c" transform="translate(353.66184 304.307891)">2026</text>
+     </g>
+    </g>
+    <g id="managed_spend2-xtick_6">
+     <g id="managed_spend2-line2d_6"/>
+     <g id="managed_spend2-text_6">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="446.308112" y="292.208281" transform="rotate(-0 446.308112 292.208281)">Apr</text>
+     </g>
+    </g>
+    <g id="managed_spend2-xtick_7">
+     <g id="managed_spend2-line2d_7"/>
+     <g id="managed_spend2-text_7">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="526.600477" y="292.208281" transform="rotate(-0 526.600477 292.208281)">Jul</text>
+     </g>
+    </g>
+    <g id="managed_spend2-xtick_8">
+     <g id="managed_spend2-line2d_8"/>
+     <g id="managed_spend2-text_8">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: middle; fill: #45505c" x="606.892842" y="292.208281" transform="rotate(-0 606.892842 292.208281)">Oct</text>
+     </g>
+    </g>
+   </g>
+   <g id="managed_spend2-matplotlib.axis_2">
+    <g id="managed_spend2-ytick_1">
+     <g id="managed_spend2-line2d_9">
+      <path d="M 28.787813 276.520781 
+L 622.951315 276.520781 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_10"/>
+     <g id="managed_spend2-text_9">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="281.364531" transform="rotate(-0 24.787813 281.364531)">$0</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_2">
+     <g id="managed_spend2-line2d_11">
+      <path d="M 28.787813 248.112193 
+L 622.951315 248.112193 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_12"/>
+     <g id="managed_spend2-text_10">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="252.955943" transform="rotate(-0 24.787813 252.955943)">$1M</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_3">
+     <g id="managed_spend2-line2d_13">
+      <path d="M 28.787813 219.703604 
+L 622.951315 219.703604 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_14"/>
+     <g id="managed_spend2-text_11">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="224.547354" transform="rotate(-0 24.787813 224.547354)">$2M</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_4">
+     <g id="managed_spend2-line2d_15">
+      <path d="M 28.787813 191.295016 
+L 622.951315 191.295016 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_16"/>
+     <g id="managed_spend2-text_12">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="196.138766" transform="rotate(-0 24.787813 196.138766)">$3M</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_5">
+     <g id="managed_spend2-line2d_17">
+      <path d="M 28.787813 162.886427 
+L 622.951315 162.886427 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_18"/>
+     <g id="managed_spend2-text_13">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="167.730177" transform="rotate(-0 24.787813 167.730177)">$4M</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_6">
+     <g id="managed_spend2-line2d_19">
+      <path d="M 28.787813 134.477839 
+L 622.951315 134.477839 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_20"/>
+     <g id="managed_spend2-text_14">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="139.321589" transform="rotate(-0 24.787813 139.321589)">$5M</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_7">
+     <g id="managed_spend2-line2d_21">
+      <path d="M 28.787813 106.06925 
+L 622.951315 106.06925 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_22"/>
+     <g id="managed_spend2-text_15">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="110.913" transform="rotate(-0 24.787813 110.913)">$6M</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_8">
+     <g id="managed_spend2-line2d_23">
+      <path d="M 28.787813 77.660662 
+L 622.951315 77.660662 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_24"/>
+     <g id="managed_spend2-text_16">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="82.504412" transform="rotate(-0 24.787813 82.504412)">$7M</text>
+     </g>
+    </g>
+    <g id="managed_spend2-ytick_9">
+     <g id="managed_spend2-line2d_25">
+      <path d="M 28.787813 49.252074 
+L 622.951315 49.252074 
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: none; stroke: #dcdee0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="managed_spend2-line2d_26"/>
+     <g id="managed_spend2-text_17">
+      <text style="font-size: 10px; font-family: 'Inter'; text-anchor: end; fill: #45505c" x="24.787813" y="54.095824" transform="rotate(-0 24.787813 54.095824)">$8M</text>
+     </g>
+    </g>
+   </g>
+   <g id="managed_spend2-patch_3">
+    <path d="M 35.746484 276.520781 
+L 53.946087 276.520781 
+L 53.946087 258.506015 
+L 35.746484 258.506015 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_4">
+    <path d="M 62.510606 276.520781 
+L 80.710209 276.520781 
+L 80.710209 255.226925 
+L 62.510606 255.226925 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_5">
+    <path d="M 89.274728 276.520781 
+L 107.47433 276.520781 
+L 107.47433 251.89312 
+L 89.274728 251.89312 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_6">
+    <path d="M 116.038849 276.520781 
+L 134.238452 276.520781 
+L 134.238452 246.92656 
+L 116.038849 246.92656 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_7">
+    <path d="M 142.802971 276.520781 
+L 161.002574 276.520781 
+L 161.002574 243.319948 
+L 142.802971 243.319948 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_8">
+    <path d="M 169.567093 276.520781 
+L 187.766696 276.520781 
+L 187.766696 241.409385 
+L 169.567093 241.409385 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_9">
+    <path d="M 196.331215 276.520781 
+L 214.530817 276.520781 
+L 214.530817 242.953847 
+L 196.331215 242.953847 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_10">
+    <path d="M 223.095336 276.520781 
+L 241.294939 276.520781 
+L 241.294939 232.912064 
+L 223.095336 232.912064 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_11">
+    <path d="M 249.859458 276.520781 
+L 268.059061 276.520781 
+L 268.059061 227.418922 
+L 249.859458 227.418922 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_12">
+    <path d="M 276.62358 276.520781 
+L 294.823183 276.520781 
+L 294.823183 226.570358 
+L 276.62358 226.570358 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_13">
+    <path d="M 303.387702 276.520781 
+L 321.587304 276.520781 
+L 321.587304 223.319336 
+L 303.387702 223.319336 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_14">
+    <path d="M 330.151823 276.520781 
+L 348.351426 276.520781 
+L 348.351426 220.675008 
+L 330.151823 220.675008 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_15">
+    <path d="M 356.915945 276.520781 
+L 375.115548 276.520781 
+L 375.115548 221.228634 
+L 356.915945 221.228634 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_16">
+    <path d="M 383.680067 276.520781 
+L 401.87967 276.520781 
+L 401.87967 213.93774 
+L 383.680067 213.93774 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_17">
+    <path d="M 410.444189 276.520781 
+L 428.643791 276.520781 
+L 428.643791 210.765637 
+L 410.444189 210.765637 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_18">
+    <path d="M 437.20831 276.520781 
+L 455.407913 276.520781 
+L 455.407913 207.147037 
+L 437.20831 207.147037 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #a2a6ab"/>
+   </g>
+   <g id="managed_spend2-patch_19">
+    <path d="M 463.972432 276.520781 
+L 482.172035 276.520781 
+L 482.172035 188.256092 
+L 463.972432 188.256092 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="managed_spend2-patch_20">
+    <path d="M 490.736554 276.520781 
+L 508.936157 276.520781 
+L 508.936157 174.925021 
+L 490.736554 174.925021 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="managed_spend2-patch_21">
+    <path d="M 517.500676 276.520781 
+L 535.700278 276.520781 
+L 535.700278 140.468727 
+L 517.500676 140.468727 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="managed_spend2-patch_22">
+    <path d="M 544.264797 276.520781 
+L 562.4644 276.520781 
+L 562.4644 119.023993 
+L 544.264797 119.023993 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="managed_spend2-patch_23">
+    <path d="M 571.028919 276.520781 
+L 589.228522 276.520781 
+L 589.228522 96.666945 
+L 571.028919 96.666945 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="managed_spend2-patch_24">
+    <path d="M 597.793041 276.520781 
+L 615.992644 276.520781 
+L 615.992644 64.893047 
+L 597.793041 64.893047 
+z
+" clip-path="url(#managed_spend2-p0c7b7e0f85)" style="fill: #0b7a5e"/>
+   </g>
+   <g id="managed_spend2-patch_25">
+    <path d="M 28.787813 276.520781 
+L 622.951315 276.520781 
+" style="fill: none; stroke: #a2a6ab; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="managed_spend2-text_18">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter'; text-anchor: middle; fill: #0b7a5e" x="606.892842" y="58.239727" transform="rotate(-0 606.892842 58.239727)">$7.4M</text>
+   </g>
+   <g id="managed_spend2-text_19">
+    <text style="font-size: 10px; font-family: 'Inter'; text-anchor: start; fill: #737b84" x="28.787813" y="12.5675" transform="rotate(-0 28.787813 12.5675)">Customer ad spend run through Northpine, $ per month</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="managed_spend2-p0c7b7e0f85">
+   <rect x="28.787813" y="22.5675" width="594.163503" height="253.953281"/>
+  </clipPath>
+ </defs>
+</svg>
