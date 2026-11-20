@@ -53,7 +53,7 @@ def main():
     env = Environment(loader=FileSystemLoader(str(ROOT / "memo")), undefined=StrictUndefined, autoescape=False)
     md = env.get_template("memo.md.j2").render(m=m, mon=lambda mid, case="prep": month_ru(m, mid, case))
     body = markdown.markdown(md)
-    body = body.replace("</h1>", "</h1><div class='meta'>От: Захар, Chief of Staff · Кому: Alex · Данные по 31 октября 2026 · Всё в репо: github.com/d3faultnpc/northpine-series-a</div>", 1)
+    body = body.replace("</h1>", "</h1><div class='meta'>От: Захар, Chief of Staff · Кому: Alex · Данные по 31 октября 2026 · Все в репо: github.com/d3faultnpc/northpine-series-a</div>", 1)
     html = f"<!doctype html><html lang='ru'><head><meta charset='utf-8'><title>Записка Alex</title><style>{CSS}</style></head><body>{body}</body></html>"
     out = ROOT / "out"
     (out / "memo.html").write_text(html)
