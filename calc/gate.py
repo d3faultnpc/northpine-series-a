@@ -31,7 +31,7 @@ def main():
               f"- Concentration: Brightline {pct('rev_top1_share')} of MRR, top-10 {pct('rev_top10_share')}",
               "", f"**Recommendation: {'A' if ok else 'B'}** — 'Autopilot turned the tool into an agent customers buy and keep'.",
               "Caveats carried into the deck: Autopilot launched with new pricing (effects overlap); Autopilot ON/OFF is self-selected and n is small; post-launch cohorts are 3–5 months old.",
-              "", "**Decision (main agent, delegated by Zakhar 2026-11-19): A.** B's managed-spend number stays as slide 5 (scale/trust)."]
+              "", "**Decision: A** (orchestrator's recommendation, accepted by Zakhar on 2026-11-19). B's managed-spend number stays as slide 5 (scale/trust)."]
     (ROOT / "out" / "gate_summary.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 

@@ -1,6 +1,6 @@
 """Shared loaders + the one normalized-MRR core. Every calc module imports from here.
 
-Nobody else re-parses raw files or recomputes MRR. Definitions: CLAUDE.md §3.
+Nobody else re-parses raw files or recomputes MRR. Definitions: README › Definitions.
 """
 from __future__ import annotations
 

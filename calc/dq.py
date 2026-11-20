@@ -1,4 +1,4 @@
-"""Data-quality log (CLAUDE.md §4). Writes calc/data_quality.csv; returns dq_* metric rows (§5 columns).
+"""Data-quality log (README › Data quality). Writes calc/data_quality.csv; returns dq_* metric rows (§5 columns).
 
 Everything here is computed from data/raw via calc/load.py. Issues are logged, never cleaned.
 """
@@ -244,7 +244,7 @@ def run() -> pd.DataFrame:
     issue("stripe_refunds; stripe_charges", f"All {dup_unmatched}/{len(dup_r)} 'duplicate' refunds have only one succeeded "
           f"charge on the invoice (no second charge in the data)", len(dup_r),
           f"{_usd(dup_r['amount_usd'].sum())} of refunds kept in MRR by load.py although cash was returned",
-          "Kept per §3 (remove duplicate-charge refunds); question for main agent: treat as clawback if no duplicate charge?",
+          "Kept per §3 (remove duplicate-charge refunds); open question: treat as clawback if no duplicate charge? (Resolved: refunds are cash events and do not change MRR.)",
           "M", "appendix")
     fl = ch[ch["status"] == "failed"]
     fl_inv = inv[inv["id"].isin(fl["invoice"])]
@@ -427,7 +427,7 @@ def run() -> pd.DataFrame:
           f"duplicates {int(pu.duplicated(['stripe_customer_id','month']).sum())}; autopilot_enabled before May-26: "
           f"{int((pu['autopilot_enabled'] & (pu['period'] < MAY26)).sum())}; max managed spend/customer-month "
           f"{_usd(pu['managed_ad_spend_usd'].max())}", int((~pu["paying"]).sum()),
-          "Managed spend / take rate may include non-paying accounts", "Take rate: decide filter (main agent)", "M", "appendix")
+          "Managed spend / take rate may include non-paying accounts", "Take rate: paying customers only (orchestrator, accepted)", "M", "appendix")
     pu_bl = pu[(pu["stripe_customer_id"] == brightline_id()) & (pu["period"] == OCT26)]
     if len(pu_bl):
         issue("product_usage_monthly", f"Brightline Oct-26: stores_connected {int(pu_bl['stores_connected'].iloc[0])}, managed spend "

@@ -1,7 +1,7 @@
 """Revenue block: point-in-time MRR/ARR, headline series values, growth, price vs volume,
 driver decomposition, segment/plan series, concentration, ARR bridge (A1), plan mix.
 
-Definitions: CLAUDE.md §3. MRR series comes only from load.customer_month_mrr()/monthly_totals().
+Definitions: README › Definitions. MRR series comes only from load.customer_month_mrr()/monthly_totals().
 run() -> DataFrame of metric rows (§5 columns) and writes calc/series/revenue_*.csv.
 """
 from __future__ import annotations

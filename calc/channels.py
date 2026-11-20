@@ -1,8 +1,8 @@
-"""Channels / CAC (CLAUDE.md §3 CAC/payback, §4 items 7-9).
+"""Channels / CAC (README › Definitions: CAC/payback; data-quality items on attribution).
 
 CAC = (bank channel spend + partner commissions) / new paying by Stripe metadata channel, May-Oct 26.
 Never platform attribution for CAC. No bank spend line -> CAC = NA ("no direct spend").
-Payback is NOT computed here (needs GM, owned by main agent): payback = CAC / (ARPA_new x GM).
+Payback is NOT computed here (needs GM; computed by the orchestrator in derived.py): payback = CAC / (ARPA_new x GM).
 
 Writes: calc/series/channels_mapping.csv, channels_funnel_monthly.csv,
         channels_attribution_monthly.csv, channels_spend_monthly.csv, channels_cac.csv

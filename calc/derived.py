@@ -36,7 +36,7 @@ def run() -> pd.DataFrame:
 
     gdef = ("Gross margin on total recurring revenue: (subscription mrr_post + usage-tier revenue − COGS) / "
             "(mrr_post + usage). COGS = LLM inference + hosting + Intercom (bank).")
-    gcav = ("Deviation from CLAUDE.md §3 (denominator mrr_post only) taken by main agent: COGS serves usage-tier "
+    gcav = ("Deviation from the original definition (denominator mrr_post only), proposed by the orchestrator and accepted by Zakhar: COGS serves usage-tier "
             "revenue too, so mrr_post-only GM understates margin. Both are in calc/series/derived_gm_monthly.csv.")
     src = "stripe_invoices.csv; bank_transactions.csv"
     may_oct = [p for p in gm.index if APR26 < p <= OCT26]

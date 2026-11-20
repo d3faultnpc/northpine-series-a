@@ -1,4 +1,4 @@
-"""Independent QA for the shipped deck + memo (CLAUDE.md §13). Run: python run.py qa
+"""Independent QA for the shipped deck + memo (QA checklist below). Run: python run.py qa
 
 Reads only the built artifacts (out/deck.pdf, out/memo.pdf, out/deck.html, out/*_ids.csv),
 calc/metrics.csv and calc/series/*.csv. Fixes nothing. Exits 1 if any check FAILs.

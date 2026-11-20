@@ -1,7 +1,7 @@
 """Retention / product metrics: cohorts, churn, Autopilot cohort, adoption, managed spend,
 agent behaviour, NPS, quote candidates, support load.
 
-Per-customer revenue comes ONLY from load.customer_month_mrr() (CLAUDE.md §3). Writes only
+Per-customer revenue comes ONLY from load.customer_month_mrr() (README › Definitions). Writes only
 calc/series/retention_*.csv. run() returns metric rows in the §5 columns, full precision.
 """
 from __future__ import annotations
@@ -283,7 +283,7 @@ def usage(mat: pd.DataFrame):
         "count", "")
     add("ret_paying_n_oct26_usage", "3", "Paying customers Oct26 (denominator for adoption)", len(op), "count",
         "2026-10", "Customers with mrr_post>0 in Oct26 that have an Oct26 usage row", src, "paying Oct26", "count",
-        "Main agent owns the headline paying-customer count; this is the adoption denominator.")
+        "The revenue module owns the headline paying-customer count; this is the adoption denominator.")
     add("ret_ap_enabled_all_oct26", "3", "Autopilot-enabled customers in Oct26 usage (any status)",
         int(o.autopilot_enabled.sum()), "count", "2026-10", "Usage rows Oct26 with autopilot_enabled=true", src,
         "all usage rows Oct26", "count", "Includes customers with mrr_post=0 (coupon/past_due).")
@@ -330,7 +330,7 @@ def usage(mat: pd.DataFrame):
     add("ret_take_rate_oct26", "5", "Take rate Oct26 (mrr_post / managed spend)", _div(mrr_oct, so.managed_spend),
         "ratio", "2026-10", "mrr_post Oct26 (customer_month_mrr) / managed ad spend Oct26 (all usage rows)", src,
         "Oct26", "sum mrr_post / sum managed_ad_spend_usd",
-        "A ratio, not the revenue model (pricing is subscription). Main agent may recompute from revenue series.")
+        "A ratio, not the revenue model (pricing is subscription). Recomputed from the revenue series in derived.py.")
     add("ret_take_rate_paying_oct26", "5", "Take rate Oct26 on paying-customer spend", _div(mrr_oct, so.managed_spend_paying),
         "ratio", "2026-10", "mrr_post Oct26 / managed spend of paying customers", src, "paying Oct26", "ratio", "")
 

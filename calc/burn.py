@@ -1,4 +1,4 @@
-"""Burn / runway / gross margin / opex / team. Bank is primary for cash. CLAUDE.md §3.
+"""Burn / runway / gross margin / opex / team. Bank is primary for cash. Definitions: README › Definitions.
 
 run() -> metric rows (§5 columns). Writes calc/series/burn_*.csv.
 Sign convention: series `net_burn` = money_in + money_out (negative = cash consumed, as in the bank
@@ -15,7 +15,7 @@ import pandas as pd
 from load import CUTOFF, MONTHS, OCT26, APR26, SERIES, load, monthly_totals
 
 RAISE = 8_000_000.0
-CS_SHARE = 0.5  # ASSUMPTION for gm_incl_cs (open input in CLAUDE.md §7; Zakhar may override)
+CS_SHARE = 0.5  # ASSUMPTION for gm_incl_cs (open input; Zakhar may override)
 BURN_UP = 0.5   # +50% burn sensitivity
 BUFFER_MONTHS = 6
 AVG3 = pd.period_range("2026-08", "2026-10", freq="M")

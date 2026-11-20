@@ -62,7 +62,7 @@ Why the deltas: calc reduces MRR for *all* refunds and lost disputes, not just d
 No typos found. The A1 bridge reconciles to the dollar. Post-cut-off records (refund 4 Nov, dispute 5 Dec) are excluded and logged. The DQ log covers the double refund plus lost dispute on one invoice (DQ26).
 
 
-## Resolution (main agent, after this report)
+## Resolution (orchestrator, after this report; accepted by Zakhar)
 - Refunds and lost disputes no longer reduce MRR (cash events, logged in DQ). Growth is now 2.5x (2.48) total and 2.1x ex-Brightline; churn is 5.8% → 3.2%. These match the independent rebuild.
 - Slide 3 and the memo: the comparative undo claim is removed. Only the Autopilot undo rate (0.3%) is stated, and the memo warns not to claim the comparison.
 - Slide 12: the headline now uses the 24-month burn ceiling ($417k/mo, 1.7x today); 8 and 40 months move to the footer.

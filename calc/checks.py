@@ -1,4 +1,4 @@
-"""Compare computed metrics with snapshot expectations (CLAUDE.md §9) AFTER the blind calc.
+"""Compare computed metrics with a first-pass snapshot of expected values AFTER the blind calc.
 Writes calc/checks.txt. |Δ| > 3% is FLAGged with a reason; nothing is tuned toward §9."""
 from pathlib import Path
 

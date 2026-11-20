@@ -3,7 +3,7 @@
     .venv/bin/python deck/build.py [--metrics PATH] [--series DIR] [--template PATH] [--out PATH]
                                    [--png DIR] [--allow-layout-issues] [--demo]
 
-Template contract (CLAUDE.md §5):
+Template contract (README: every number comes from calc/metrics.csv):
 - Numbers only as {{ m.<id> }} (formatted by unit, chartkit.fmt_value). A missing id or an NA value
   FAILS the build, naming the id. Overrides: m.fmt('id', decimals=1, sign=True), m.raw('id') -> float,
   m.pct_pts('id') -> '+5 pts' (ratio difference), m.meta('id') -> the csv row (period, caveat, ...).
